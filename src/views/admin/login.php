@@ -7,11 +7,19 @@
 ?>
 
 
-<form action="" method="post">
+<div class="bg-login">
+    <div class="kotak d-flex flex-column align-items-center justify-content-around">
+        <img class="" width="200" src="<?= BASEURL ?>/image/LOGO.png" alt="">
+        <form action="" class="form d-flex flex-column align-items-center gap-5" method="post">
 
-    <label for="username">Username</label>
-    <input type="text" name="username" placeholder="username" id="">
-    <label for="password">Password</label>
-    <input type="password" placeholder="password">
-    <a href="<?= BASEURL ?>/admin/dashboard">login</a>
-</form>
+
+            <input type="text" class="form-control" name="username" placeholder="Username" id="">
+
+            <input type="password" class="form-control" placeholder="Password">
+            <a class="btn btn-secondary w-full d-flex align-items-center justify-content-center fw-semibold"
+                type="button" href="<?= BASEURL ?>/admin/dashboard">Login</a>
+        </form>
+
+    </div>
+
+</div>

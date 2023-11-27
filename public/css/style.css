@@ -4,10 +4,78 @@
   --background: #ffffff;
 }
 
+.rectangle {
+  background-image: url("../image/Grapol.jpg");
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--secondary-color) !important;
+}
+
+.btn {
+  --bs-btn-border-width: 0 !important;
+}
+.btn-bd-primary:hover {
+  background: #ffb848 !important;
+}
+
+.box h1,
+h3 {
+  z-index: 10;
+  color: var(--background) !important;
+}
+
+.box h1 {
+  font-size: 70px !important;
+}
+
+.box h3 {
+  max-width: 40rem;
+  opacity: 0.7;
+}
+
+.wave {
+  color: white;
+  z-index: 100;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.hero {
+  height: 120vh;
+  /* max-height: 120vh; */
+  position: relative;
+}
+.cover {
+  background-color: var(--primary-color);
+  opacity: 55%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-item a:hover {
+  color: var(--secondary-color) !important;
+}
+
 body {
   font-family: "Titillium Web", sans-serif !important;
   color: var(--primary-color) !important;
-  height: 2000px;
 }
 
 .semi-bold {
@@ -25,17 +93,182 @@ body {
   position: fixed !important;
   top: 0;
   left: 0;
+  z-index: 1000;
   transition: background-color 0.4s ease-in-out;
+}
+
+.nav-link {
+  color: var(--primary-color) !important;
+}
+
+.color-white {
+  color: var(--background) !important;
+}
+.color-white.scrolled {
+  color: var(--primary-color) !important;
 }
 
 .navbar.scrolled {
   background: var(--background) !important;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0);
 }
-.nav-link {
-  color: var(--primary-color) !important;
-}
 
 .padding-top-400 {
   padding-top: 100px;
 }
+
+/* end home & navbar */
+
+/* Card */
+.kartu {
+  width: 350px;
+  height: 400px;
+  transition: height 0.3s ease-in-out;
+}
+
+.background {
+  color: var(--background) !important;
+  width: 100%;
+  height: 100%;
+  background-image: url("../image/gedung.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.background h1,
+p {
+  z-index: 3;
+}
+
+.gradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.2) 65%,
+    var(--primary-color) 100%
+  );
+}
+
+.kartu:hover {
+  height: 450px;
+}
+
+/* end Card */
+
+/* login Form */
+.bg-login {
+  background-image: url("../image/backgroundLogin.jpg");
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.kotak {
+  width: 400px;
+  /* height: 600px; */
+
+  max-height: 600px;
+  padding: 2rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* From https://css.glass */
+
+  /* From https://css.glass */
+  /* From https://css.glass */
+  background: rgba(22, 31, 41, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.form {
+  width: 100%;
+}
+
+.form-label {
+  color: var(--background) !important;
+}
+
+input {
+  outline: none !important;
+  color: var(--background) !important;
+  border: 1px solid var(--background) !important;
+  background: none !important;
+  padding: 10px 10px !important;
+}
+
+input::placeholder {
+  color: var(--background) !important;
+}
+
+.w-full {
+  width: 100%;
+  height: 50px !important;
+  background-color: #353578 !important;
+}
+
+form a:hover {
+  background-color: red !important;
+}
+/* end login form */
+
+/* about section */
+
+.size70 {
+  font-size: 70px !important;
+}
+#about .container p {
+  width: 80%;
+  font-size: 20px !important;
+}
+/* end about section */
+
+/* media queries */
+
+@media (max-width: 1800px) {
+  .hero {
+    max-height: 110vh;
+  }
+}
+
+@media (max-width: 1270px) {
+  .hero {
+    max-height: 100vh;
+  }
+}
+
+@media (max-width: 50em) {
+  .hero {
+    max-height: 100vh;
+  }
+  .box h1 {
+    font-size: 50px !important;
+  }
+
+  .box h3 {
+    font-size: 1.7rem !important;
+  }
+  .size70 {
+    font-size: 60px !important;
+  }
+  #about .container p {
+    font-size: 20px !important;
+  }
+  .kotak {
+    max-width: 300px;
+  }
+}
+
+/* end media queries */
