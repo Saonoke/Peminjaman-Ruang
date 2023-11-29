@@ -1,4 +1,4 @@
-<div class="cover">
+<div class="cover-thanks">
 <div class="main">
 
             <div class="flex-container d-flex  justify-content-center ">
@@ -45,7 +45,7 @@
     .teks{
         margin-top: 220px;
     }
-    .cover{
+    .cover-thanks{
         width: 100%;
         height: 100vh;
     }
