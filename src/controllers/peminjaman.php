@@ -14,7 +14,6 @@ class peminjaman extends Controller
     public function send()
     {
         $this->view('template/header');
-
         $this->view('peminjaman/thanks');
         $this->view('template/footer');
     }
