@@ -172,7 +172,7 @@ p {
 }
 
 .kotak {
-  width: 400px;
+  width: 350px;
   /* height: 600px; */
 
   max-height: 600px;
@@ -186,10 +186,10 @@ p {
 
   /* From https://css.glass */
   /* From https://css.glass */
-  background: rgba(22, 31, 41, 0.55);
+  background: rgba(22, 31, 41, 0.4);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(17px);
   -webkit-backdrop-filter: blur(20px);
 }
 
@@ -220,7 +220,7 @@ input::placeholder {
 }
 
 form a:hover {
-  background-color: red !important;
+  background-color: #7a7ade !important;
 }
 /* end login form */
 
