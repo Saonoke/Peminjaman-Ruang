@@ -1,0 +1,90 @@
+body{
+    background-color: #F2F5FD!important;
+    font-family: "Titillium Web", sans-serif !important;
+}
+
+.card-total{
+    width: 20%;
+    
+    height: 10vh;
+    border-radius: .5rem;
+  background: #fff;
+  -webkit-box-shadow: 3px 2px 13px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 2px 13px -4px rgba(0,0,0,0.75);
+  box-shadow: 3px 2px 13px -4px rgba(0,0,0,0.75)
+
+}
+
+.bg-ungu{
+    background-color: #24244E!important;
+}
+
+.card-total h1,.card-total h2{
+    font-size: 1.5em;
+}
+input{
+    font-family: "Titillium Web", sans-serif !important;
+    margin-bottom: 2rem!important;
+    width: 20rem!important;
+    outline: 0!important;
+    background-color: #fff!important;
+    color: black!important;
+    }
+
+   
+.box-yellow{
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    width: 10%;
+    height: 100%;
+    background: #FFA921!important;
+}
+.box-green{
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    width: 10%;
+    height: 100%;
+    background: #248749!important;
+}
+#yellow{
+    background: #FFA921;
+}
+
+table thead tr:first-child  th:first-child
+{
+    border-top-left-radius: 15px;
+}
+
+/* Round Corner for TOP RIGHT COLUMN */
+
+table thead tr:first-child  th:last-child
+{
+    border-top-right-radius: 15px;
+}
+
+/* Round Corner for BOTTOM LEFT COLUMN */
+
+table tbody tr:last-child td:first-child
+{
+    border-bottom-left-radius: 15px;
+}
+
+/* Round Corner for BOTTOM RIGHT COLUMN */
+
+table tbody tr:last-child td:last-child
+{
+  
+    border-bottom-right-radius: 15px;
+}
+
+.table{
+     border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+    
+}
+
+.dt-row{
+    margin-bottom:2rem!important;
+}

@@ -60,7 +60,7 @@
             <h1 class="semi-bold ">Peminjaman Ruang JTI</h1>
             <h3 class="mt-3">Peminjaman Ruang oleh Mahasiswa, Dosen,Pihak luar yang ingin meminjam gedung di Polinema
             </h3>
-            <a href="#" class="mt-2 btn py-2 btn-primary btn-bd-primary">Pinjam Sekarang !</a>
+            <a href="#" class="mt-2 mb-5 btn py-2 btn-primary btn-bd-primary">Pinjam Sekarang !</a>
         </div>
 
 
@@ -131,6 +131,73 @@
     </div>
     <a href="#" class="mt-5 btn py-2 btn-primary btn-bd-primary">Pinjam Sekarang !</a>
 </div>
+
+<section id="spec" class="d-flex width-100">
+    <div class="bg-sec width-70">
+    <div class="d-flex justify-content-center ">
+        <div class="container p-3">
+        <div class="d-flex justify-content-between align-items-center gap-3">
+            <div class="left">
+            <div class="mb-5">
+                <img class="icon" src="<?= BASEURL ?>/image/time.png" alt="">
+            <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste molestias eaque quos mollitia facilis temporibus possimus quae quo aspernatur dignissimos.
+            </p>    
+            
+
+            </div>
+            <div>
+            <img class="icon-vektor" src="<?= BASEURL ?>/image/arrow.png" alt="">
+            <p>
+
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Quisquam aperiam ab neque beatae sed dolorem temporibus 
+                alias suscipit quasi similique.
+            </p>    
+            </div>
+            </div>
+          <div class="right">
+          <div class="mb-5">
+          <img class="icon-vektor" src="<?= BASEURL ?>/image/wa.png" alt="">
+          <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+              Quisquam aperiam ab neque beatae sed dolorem temporibus 
+              alias suscipit quasi similique.
+          </p>  
+            </div>
+            <div>
+            <img class="icon" src="<?= BASEURL ?>/image/calendar.png" alt="">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Quisquam aperiam ab neque beatae sed dolorem temporibus 
+                alias suscipit quasi similique.
+            </p>    
+            </div>   
+          </div>
+         
+        </div>
+        
+
+    </div>
+    
+    
+    
+    
+    
+    
+</div>
+    
+
+</div>
+
+
+    
+    
+    <div class="bg-image width-50">
+        <img class="rotate" src="<?= BASEURL ?>/image/wave.svg" alt="">
+            
+</div> 
+</section>
 
 <section id="about">
     <div class="container">
