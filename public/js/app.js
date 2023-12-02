@@ -1,3 +1,4 @@
+new DataTable('#coba');
 document.addEventListener("scroll", () => {
   const nav = document.querySelector(".navbar");
   const white = document.querySelectorAll(".color-white");

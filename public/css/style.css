@@ -235,6 +235,55 @@ form a:hover {
 }
 /* end about section */
 
+/* spec */
+.bg-sec{
+  
+  background-color: var(--secondary-color);
+}
+
+.width-70{
+  position: relative!important;
+  top: 0;
+  right: 0;
+  width: 70%;
+ 
+}
+.width-100{
+  width: 100%;
+}
+.width-50{
+  width: 30%;
+  position: relative;
+}
+
+.bg-image{
+  background-image: url("../image/gedung.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon{
+  width: 70px;
+}
+.icon-vektor{
+  width: 45px;
+}
+.rotate{
+  
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.width-10{
+  width: 10%;
+  position: relative;
+}
+.container{
+  
+}
+/* end spec */
+
 /* media queries */
 
 @media (max-width: 1800px) {
