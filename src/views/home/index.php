@@ -174,30 +174,15 @@
             </p>    
             </div>   
           </div>
-         
         </div>
-        
-
-    </div>
-    
-    
-    
-    
-    
-    
+    </div>    
 </div>
-    
-
 </div>
-
-
-    
-    
     <div class="bg-image width-50">
-        <img class="rotate" src="<?= BASEURL ?>/image/wave.svg" alt="">
-            
+        <img class="rotate" src="<?= BASEURL ?>/image/wave.svg" alt="">      
 </div> 
 </section>
+
 
 <section id="about">
     <div class="container">
