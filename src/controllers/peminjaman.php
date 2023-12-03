@@ -17,6 +17,12 @@ class peminjaman extends Controller
         $this->view('peminjaman/thanks');
         $this->view('template/footer');
     }
+    public function peminjaman(){
+        $this->view('template/header');
+        $this->view('template/navbar');
+        $this->view('peminjaman/peminjaman');
+        $this->view('template/footer');
+    }
 }
 
 
