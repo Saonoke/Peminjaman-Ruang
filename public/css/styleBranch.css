@@ -1,0 +1,60 @@
+.pencarian{
+    background-color: #ffaa22;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.form-group label{
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+.ctrl{
+    color: #ffaa22 !important;
+}
+
+.search{
+    max-height: 40px;
+    background-color: white !important;
+    color: #ffaa22 !important;
+}
+
+.search:hover{
+    background-color: #ffaa22 !important;
+    color: white !important;
+    border: 2px solid white !important;
+}
+
+.hari{
+    list-style: none;
+    text-align: center;
+}
+
+.list-hari{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: #24244f;
+}
+.jadwal{
+    width: 115px;
+    background-color: #ffaa22;
+    border-radius: 10px;
+}
+.day{
+    background-color: #ffaa22;
+}
+.night{
+    background-color: #24244f;
+    color: white;
+}
+.full{
+    color: red !important;
+}
+.kelas{
+    margin-right: 6rem;
+}
+.avail{
+    color: green;
+}

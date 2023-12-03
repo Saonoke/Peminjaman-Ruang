@@ -172,7 +172,7 @@ p {
 }
 
 .kotak {
-  width: 400px;
+  width: 350px;
   /* height: 600px; */
 
   max-height: 600px;
@@ -186,10 +186,10 @@ p {
 
   /* From https://css.glass */
   /* From https://css.glass */
-  background: rgba(22, 31, 41, 0.55);
+  background: rgba(22, 31, 41, 0.4);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(17px);
   -webkit-backdrop-filter: blur(20px);
 }
 
@@ -220,7 +220,7 @@ input::placeholder {
 }
 
 form a:hover {
-  background-color: red !important;
+  background-color: #7a7ade !important;
 }
 /* end login form */
 
@@ -234,6 +234,55 @@ form a:hover {
   font-size: 20px !important;
 }
 /* end about section */
+
+/* spec */
+.bg-sec{
+  
+  background-color: var(--secondary-color);
+}
+
+.width-70{
+  position: relative!important;
+  top: 0;
+  right: 0;
+  width: 70%;
+ 
+}
+.width-100{
+  width: 100%;
+}
+.width-50{
+  width: 30%;
+  position: relative;
+}
+
+.bg-image{
+  background-image: url("../image/gedung.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon{
+  width: 70px;
+}
+.icon-vektor{
+  width: 45px;
+}
+.rotate{
+  
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.width-10{
+  width: 10%;
+  position: relative;
+}
+.container{
+  
+}
+/* end spec */
 
 /* media queries */
 
