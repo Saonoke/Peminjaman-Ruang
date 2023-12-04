@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-transparent">
-    <!-- <div class="container"> -->
-
+ 
     <div class="container ">
         <div class="navbar-brand d-flex align-items-center gap-3">
             <a href="" class="d-flex align-items-center gap-3 nav-link">
@@ -32,7 +31,7 @@
 
 
                 <li class="nav-item">
-                    <a href="<?= BASEURL ?>/admin/login" class="fw-bold nav-link color-white ">Login</a>
+                    <a href="<?= BASEURL ?>/admin/index" class="fw-bold nav-link color-white ">Login</a>
                 </li>
 
             </ul>
@@ -44,18 +43,14 @@
     </div>
 
 
-    <!-- </div> -->
+
 </nav>
 
 
 <div class="hero">
     <div class="rectangle d-flex align-items-center">
-
-
         <div class="cover z-1">
-
         </div>
-
         <div class="d-flex z-3 box flex-column text-center justify-content-center align-items-center">
             <h1 class="semi-bold ">Peminjaman Ruang JTI</h1>
             <h3 class="mt-3">Peminjaman Ruang oleh Mahasiswa, Dosen,Pihak luar yang ingin meminjam gedung di Polinema
@@ -135,7 +130,7 @@
 <section id="spec" class="d-flex width-100">
     <div class="bg-sec width-70">
     <div class="d-flex justify-content-center ">
-        <div class="container p-3">
+        <div class="container px-5 p-5">
         <div class="d-flex justify-content-between align-items-center gap-3">
             <div class="left">
             <div class="mb-5">
