@@ -23,6 +23,20 @@ class peminjaman extends Controller
         $this->view('peminjaman/peminjaman');
         $this->view('template/footer');
     }
+    public function status(){
+        $this->view('template/header');
+        $this->view('template/navbar');
+        $this->view('peminjaman/status');
+        $this->view('template/footer');
+        
+    }
+    public function ruang(){
+        $this->view('template/header');
+        $this->view('template/navbar');
+        $this->view('peminjaman/ruang');
+        $this->view('template/footer');
+        
+    }
 }
 
 
