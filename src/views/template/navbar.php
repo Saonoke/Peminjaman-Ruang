@@ -32,7 +32,7 @@
 
 
                 <li class="nav-item">
-                    <a href="<?= BASEURL ?>/admin/login" class="fw-bold nav-link">Login</a>
+                    <a href="<?= BASEURL ?>/admin/index" class="fw-bold nav-link">Login</a>
                 </li>
 
             </ul>

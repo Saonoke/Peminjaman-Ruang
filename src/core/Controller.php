@@ -8,6 +8,7 @@ class Controller
     }
 
     public function model($model){
+       
         require '../src/models/'. $model .'.php';
         return new $model;
     }

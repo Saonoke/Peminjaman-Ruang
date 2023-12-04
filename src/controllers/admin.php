@@ -19,4 +19,16 @@ class admin extends Controller
         $this->view('admin/dashboard',$data);
         $this->view('template/footer');
     }
+
+    function login(){
+      
+        $cek= $this->model('login_model',$data)->login($_POST);
+        if($cek){
+            session_start();
+            $_SESSION['username']=$_POST['Username'];
+            header('Location: http://localhost/peminjamanRuang/public/admin/dashboard');
+        }else{
+            header ('Location: http://localhost/peminjamanRuang/public/admin/index');
+        }
+    }
 }

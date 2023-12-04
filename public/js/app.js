@@ -16,4 +16,13 @@ document.addEventListener("scroll", () => {
   }
 });
 
+
+$('.coba').hover(function() {
+  $(this).find('.coba').after('<p class="detail">lihat detail <i class="bi bi-chevron-double-right" ></i> </p>');
+}, function() {
+  // I assume you want to remove the content you added here as well...
+  $(this).find('.detail').remove();
+});
+
 new DataTable('coba');
+

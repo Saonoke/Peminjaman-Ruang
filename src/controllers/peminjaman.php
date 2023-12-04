@@ -31,9 +31,11 @@ class peminjaman extends Controller
         
     }
     public function ruang(){
+        $data['ruang']=$this->model('ruang_model')->get_kelas();
+     
         $this->view('template/header');
         $this->view('template/navbar');
-        $this->view('peminjaman/ruang');
+        $this->view('peminjaman/ruang',$data);
         $this->view('template/footer');
         
     }
