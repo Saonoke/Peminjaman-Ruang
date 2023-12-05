@@ -24,18 +24,33 @@ class peminjaman extends Controller
         $this->view('template/footer');
     }
     public function status(){
+        $data['penyewa']=$this->model('penyewa')->get_penyewa();
         $this->view('template/header');
         $this->view('template/navbar');
-        $this->view('peminjaman/status');
+        $this->view('peminjaman/status',$data);
         $this->view('template/footer');
         
     }
     public function ruang(){
+        $data['ruang']=$this->model('ruang_model')->get_kelas();
+     
         $this->view('template/header');
         $this->view('template/navbar');
-        $this->view('peminjaman/ruang');
+        $this->view('peminjaman/ruang',$data);
         $this->view('template/footer');
         
+    }
+
+    public function form($ruangan= 0){
+        $data['ruangan']=$ruangan;
+        $this->view('template/header');
+        $this->view('template/navbar');
+        $this->view('peminjaman/form',$data);
+        $this->view('template/footer');
+    }
+
+    function tambahPenyewa(){
+        $cek = $this->model('penyewa')->insert_penyewa($_POST);
     }
 }
 
