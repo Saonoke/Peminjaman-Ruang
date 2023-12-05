@@ -75,7 +75,7 @@
     <h1 class="text-center fw-semibold ">Profile</h1>
     <div class="mt-5 d-flex justify-content-center flex-wrap align-items-center gap-3">
 
-        <a href="#" class="text-decoration-none">
+        <a href="<?= BASEURL ?>/peminjaman/ruang" class="text-decoration-none">
             <div class="kartu">
                 <div class="px-4 background d-flex flex-column justify-content-end">
                     <div class="gradient">
@@ -89,7 +89,7 @@
         </a>
 
 
-        <a href="#" class="text-decoration-none">
+        <a href="<?= BASEURL ?>/peminjaman/ruang" class="text-decoration-none">
             <div class="kartu">
                 <div class="px-4 background d-flex flex-column justify-content-end">
                     <div class="gradient">
@@ -102,7 +102,7 @@
             </div>
         </a>
 
-        <a href="#" class="text-decoration-none">
+        <a href="<?= BASEURL ?>/peminjaman/ruang" class="text-decoration-none">
             <div class="kartu">
                 <div class="px-4 background d-flex flex-column justify-content-end">
                     <div class="gradient">

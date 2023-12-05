@@ -79,6 +79,7 @@ body {
   color: var(--primary-color) !important;
 }
 
+
 .semi-bold {
   font-weight: 600 !important;
   font-size: 24px !important;
@@ -306,9 +307,96 @@ form a:hover {
   border: none;
   width: 350px;
   height: 450px;
+  
+}
+
+@media(max-width:1000px){
+  .btn-sendiri{
+   
+    width: 300px;
+    height: 350px;
+    margin: auto;
+  }
+  .kartu-ruangan{
+    width: 100%!important;
+    height:100%!important;
+  }
 }
 
 /* end ruangan */
+
+/* status */
+.search-box{
+  width: 200px;
+  display:flex;
+    align-items: center;
+  padding:.3rem;
+  padding-left:1rem;
+  border-radius: 1rem;
+  background:#f2f2f2;
+  margin-bottom:1rem;
+}
+.search-box input{
+  outline:0!important;
+  border:none!important;
+  color: black!important;;
+  height: 30px;
+  width:90%;
+  
+}
+.search-box input::placeholder{
+  color:black!important;
+}
+
+table{
+  border-radius: 15px!important;
+  
+}
+
+.table-wrapper{
+  width: 100%;
+  overflow-x: auto;
+  padding:1rem;
+  border-radius: 1rem;
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.17);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.3px);
+-webkit-backdrop-filter: blur(5.3px);
+}
+
+
+
+/* end Status */
+
+
+
+/* ruang detail */
+
+.image-modal{
+  width: 30%;
+
+}
+
+.image-modal img{
+  width: 100%;
+}
+
+.desc input{
+  background: rgba(255, 255, 255, 0.17);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.3px);
+  -webkit-backdrop-filter: blur(5.3px);
+}
+
+.kosong{
+  display: none;
+}
+
+/* end ruang detail */
+
 
 /* media queries */
 
