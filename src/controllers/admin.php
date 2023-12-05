@@ -33,4 +33,20 @@ class admin extends Controller
             header ('Location: http://localhost/peminjamanRuang/public/admin/index');
         }
     }
+    function logout(){
+            session_destroy();
+            header ('Location: http://localhost/peminjamanRuang/public/admin/index');
+            exit();
+        
+    }
+
+
+    function acc($id=0){
+        $data['id']=$id;
+        
+        $cek= $this->model('penyewa')->acc_sewa($data);
+        if($cek){
+            header('Location: http://localhost/peminjamanRuang/public/admin/dashboard');
+        }
+    }
 }

@@ -108,7 +108,12 @@ button.addEventListener('click',()=>{
   <ul class="dropdown-menu dropdown-menu-lg-end">
     <li><button class="dropdown-item" type="button">Action</button></li>
     <li><button class="dropdown-item" type="button">Another action</button></li>
-    <li><button class="dropdown-item" type="button">Something else here</button></li>
+    <form method="post" action="<?= BASEURL ?>/admin/logout">
+    <li>
+        <button class="dropdown-item" type="submit" name="logout">Log Out</button>
+    </li>
+</form>
+
   </ul>
 </div>
 
@@ -193,7 +198,7 @@ button.addEventListener('click',()=>{
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Accept</button>
+        <a href='<?= BASEURL ?>/admin/acc/<?= $key['id'] ?>' type="button" class="btn btn-success">Accept</a>
       </div>
     </div>
   </div>
