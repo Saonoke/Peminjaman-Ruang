@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="<?= BASEURL ?>/css/style.css?v=6">
+    <link rel="stylesheet" href="<?= BASEURL ?>/css/style.css?v=11">
     
     <link rel="stylesheet" href="<?= BASEURL ?>/css/styleBranch.css?v=3">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"

@@ -17,6 +17,7 @@ document.addEventListener("scroll", () => {
 });
 
 
+
 $('.coba').hover(function() {
   $(this).find('.coba').after('<p class="detail">lihat detail <i class="bi bi-chevron-double-right" ></i> </p>');
 }, function() {
@@ -24,5 +25,4 @@ $('.coba').hover(function() {
   $(this).find('.detail').remove();
 });
 
-new DataTable('coba');
 

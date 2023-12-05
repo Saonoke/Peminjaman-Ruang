@@ -12,4 +12,20 @@ class penyewa{
         
         return mysqli_fetch_all($result,MYSQLI_ASSOC);
     }
+    public function insert_penyewa(){
+        include ('auth.php');
+        $sql = "insert into peminjam values ('".$_POST['nim']."','".$_POST['nama']."','".$_POST['nohp']."','".$_POST['email']."','".$_POST['jabatan']."');";
+        $sql1 = "insert into peminjaman values ('P02','".$_POST['nim']."','".$_POST['ruangan']."','adm2','P001',CURDATE(),CURDATE(),'".$_POST['deskripsi']."','0');";
+        if ($conn->query($sql) === TRUE) {
+      
+          if($conn->query($sql1) === TRUE){
+
+            return true;
+          }
+            
+          } else {
+            return false;
+          }
+    }
+
 }
