@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulir Pendaftaran</title>
+
     <style>
 
         input{
@@ -15,7 +10,7 @@
             background-color: #D9D9D9;
         }
         form {
-            width: 90%;
+            width: 100%;
             padding: 30px;
             border-radius: 5px;
         }
@@ -56,6 +51,7 @@
             padding: 10px;
             border: 1px solid #D9D9D9;
             margin-bottom: 10px;
+            color
         }
 
         textarea.deskripsi:focus {
@@ -92,6 +88,7 @@
             justify-content: center;
             flex-direction: column;
             margin: 10px auto;
+            width:100%!important;
         }
         #jabatan{
             color: #666666;
@@ -126,46 +123,62 @@
             object-fit: cover;
         }
 
-    </style>
-</head>
-<body>
-<form action="" method="post">
-    <h2>Data Pemohon</h2>
+        input{
+            background: #D9D9D9!important;
+            color:black!important;
+        }
 
-    <div class="form-check">
-        <h3>Jabatan</h3>
-        <input class="form-mahasiswa" type="radio" value="Mahasiswa" name="jabatan" id="jabatan">
+        h3{
+        color: #ffaa22!important;
+        font-weight: 600!important;
+        }
+
+        input::placeholder{
+            color:black!important;
+        }
+
+       
+    </style>
+
+<div class="padding-top-400 container">
+<form class="p-0" action="<?= BASEURL ?>/peminjaman/tambahPenyewa" method="post">
+    <h1 class="fw-bold" >Data Pemohon</h1>
+
+      <input type="hidden" name="ruangan" value="<?= $data['ruangan'] ?>">  
+    <div class="form-check p-0">
+        <h3 class="text-biru" >Jabatan</h3>
+        <input class="form-mahasiswa" type="radio" value="1" name="jabatan" id="jabatan">
         <label class="form-check-label" for="mahasiswa" id="jabatan">Mahasiswa</label>
         <br>
-        <input class="form-jabatan" type="radio" value="Tamu" name="jabatan" id="jabatan">
+        <input class="form-jabatan" type="radio" value="3" name="jabatan" id="jabatan">
         <label class="form-check-label" for="tamu"id="jabatan">Tamu</label>
         <br>
-        <input class="form-dosen" type="radio" value="Dosen" name="dosen" id="jabatan">
+        <input class="form-dosen" type="radio" value="2" name="jabatan" id="jabatan">
         <label class="form-check-label" for="dosen" id="jabatan">Dosen</label>
     </div>
 
     <h3>Nama</h3>
-    <input type="text" name="nama" id="opacity" required value="Masukkan Nama Lengkap">
+    <input type="text" name="nama" id="opacity" required placeholder="Masukkan Nama Lengkap">
     <br>
 
     <h3>No Identitas</h3>
-    <input type="text" name="nim" id="opacity" required value="Masukkan NIP/NIK/NIM">
+    <input type="text" name="nim" id="opacity" required placeholder="Masukkan NIP/NIK/NIM">
     <br>
 
     <h3>Email</h3>
-    <input type="email" name="email" id="opacity" required value="Masukkan Email Anda">
+    <input type="email" name="email" id="opacity" required placeholder="Masukkan Email Anda">
     <br>
 
     <h3>No Hp</h3>
-    <input type="text" name="nohp" id="opacity" required value="Masukkan No Telpon Anda (diutamakan memiliki WhatApp)">
+    <input type="text" name="nohp" id="opacity" required placeholder="Masukkan No Telpon Anda (diutamakan memiliki WhatApp)">
     <br>
 
     <h3>Deskripsi</h3>
     <br>
-    <textarea class="deskripsi" id="opacity" rows="4" >Masukkan Alasan dalam peminjaman ruang </textarea>
+    <textarea class="deskripsi" id="opacity" rows="4" name="deskripsi"  >Masukkan Alasan dalam peminjaman ruang </textarea>
     <br>
 
-    <div class="container">
+    <div class="container p-0">
         <h3>Upload your File :</h3>
         <div class="drag-area">
             <div class="icon">
@@ -178,8 +191,10 @@
             <span class="support">Supports: JPEG, JPG, PNG</span>
         </div>
         <br><br>
-    <button type="submit" name="submit">Ajukan</button>
+    <button type="submit" class="btn btn-primary mb-5" name="submit">Ajukan</button>
 </form>
+</div>
+
 
 <script>
     const dropArea = document.querySelector('.drag-area');
