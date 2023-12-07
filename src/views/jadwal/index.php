@@ -15,14 +15,14 @@
                 <input type="date" name="tanggal" class="form-control ctrl" id="">
         </div>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">Lantai</label>
-            <select name="lantai" class="form-control ctrl" id="exampleFormControlSelect1">
-                <option selected>Pilih Lantai</option>
-                <option>Lantai 5</option>
-                <option>Lantai 6</option>
-                <option>Lantai 7</option>
-                <option>Lantai 8</option>
-            </select>
+            <label for="exampleFormControlSelect1">Jam Mulai</label>
+            <input class="form-control ctrl" type="time" name="time_start" id="">
+           
+        </div>
+
+        <div class="form-group">
+        <label for="exampleFormControlSelect1">Jam Selesai</label>
+            <input class="form-control ctrl" type="time" name="time_end" id="">
         </div>
 
         <div class="form-group">
@@ -44,5 +44,13 @@
 
         </form>
         
+<?php 
+    if(isset($data['check'])){
+        echo $data['check'][0]['tanggal_pinjam'];
+    }
+
+
+?>
+
     </div>
     

@@ -14,10 +14,17 @@ class jadwal extends Controller
 
     }
     public function search(){
-        echo $_POST['ruang'];
-        echo $_POST['lantai'];
-        echo $_POST['tanggal'];
+        echo $_POST['time_start'];
+        $data['ruang']=$this->model('ruang_model')->get_kelas();
+        $data['check' ]= $this->model('penyewa')->cek_ruang();
+        $this->view('template/header');
+        $this->view('template/navbar');
+        $this->view('jadwal/index',$data);
+        $this->view('template/footer');
+
 
 
     }
+
+
 }
