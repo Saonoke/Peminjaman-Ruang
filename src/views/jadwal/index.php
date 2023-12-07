@@ -33,7 +33,7 @@
                         foreach ($data['ruang'] as $key ) {
                             ?>
                             
-                            <option><?= $key['nama_ruangan'] ?></option>
+                            <option value="<?= $key['kode_ruang'] ?>" ><?= $key['nama_ruangan'] ?></option>
                             <?php
                         }
                     ?>
@@ -44,13 +44,56 @@
 
         </form>
         
-<?php 
-    if(isset($data['check'])){
-        echo $data['check'][0]['tanggal_pinjam'];
-    }
 
-
-?>
 
     </div>
+
+
+    <div class="container">
+    <?php 
+    if(isset($data['check'])){
+      
+            if(empty( $data['check'])){
+                ?>
+                <div class="flex gap-3">
+                <h1 class="text-center mt-5 fw-semibold" >Kosong !! Silahkan Melakukan Pemesanan</h1>
+                <a href="<?= BASEURL ?>/peminjaman/ruang" class="btn btn-primary" >Pinjam Ruang</a>
+                </div>
+                      
+                <?php
+            }else{
+
+        ?>
+         <div class="table-wrapper mt-5">
+        <table   id="coba" class="table">
+        <thead>
+            <tr>
+                <th>Nama Ruangan</th>
+                <th>Tanggal</th>
+                <th>Jam Mulai</th>
+                <th>Jam Akhir</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+      foreach ($data['check'] as $key ) {
+            ?>
+                <tr>
+                    <td><?= $key['ruang'] ?></td>
+                    <td><?= $key['tanggal'] ?></td>
+                    <td><?= $key['mulai'] ?></td>
+                    <td><?= $key['akhir'] ?></td>
+                </tr>
+            <?php
+        }
+    }
+}
     
+    
+    ?>
+    </tbody>
+</table>
+</div>
+    
+    </div>
+   

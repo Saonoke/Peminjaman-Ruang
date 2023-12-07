@@ -5,7 +5,7 @@ class penyewa{
         $sql = "select pm.id_peminjaman as id,pe.nama_peminjaman as nama,(select k.kategori from kategori_penyewa k where k.id=pe.kategori) as kategori,pm.deskripsi_pinjam as deskripsi,r.nama_ruangan as ruangan,pm.tanggal_pinjam as tanggal,pm.is_acc as status
         from peminjaman pm
         join peminjam pe on pe.no_identitas=pm.no_identitas
-        join ruang r on r.kode_ruang=pm.kode_ruang;";
+        join ruang r on r.kode_ruang=pm.kode_ruang limit 0,5;";
         $result = $conn->query($sql);
         
         
@@ -25,7 +25,7 @@ class penyewa{
         $result=$conn->query( $sql3 );
         $row=$result->fetch_assoc();
         
-          $sql1 = "insert into peminjaman values ('','".$_POST['nim']."','".$_POST['ruangan']."','adm2',CURDATE(),CURDATE(),'".$_POST['deskripsi']."','0','".$row['id_pembayaran']."');";
+          $sql1 = "insert into peminjaman values ('','".$_POST['nim']."','".$_POST['ruangan']."','adm2',CURDATE(),'".$_POST['tanggal']."','".$_POST['mulai']."' ,'".$_POST['akhir']."','".$_POST['deskripsi']."','0','".$row['id_pembayaran']."');";
       
           if($conn->query($sql1) === TRUE){
             return true;
@@ -42,9 +42,9 @@ class penyewa{
     }
     
 
-    public function cek_ruang(){
+    public function cek_ruang(){  
       include ('auth.php');
-      $sql= "SELECT * FROM peminjaman where jam_awal >= '07:50:00' and jam_akhir <= '13:20:00' and tanggal_pinjam='2023-08-28' and kode_ruang ='501' ;";
+      $sql= "SELECT r.nama_ruangan as ruang, p.tanggal_pinjam as tanggal ,p.jam_awal as mulai ,p.jam_akhir as akhir from peminjaman p inner join ruang r on r.kode_ruang = p.kode_ruang where p.jam_awal >= '".$_POST['time_start']."' and p.jam_akhir <= '".$_POST['time_end']."' and p.tanggal_pinjam ='".$_POST['tanggal']."' and p.kode_ruang ='".$_POST['ruang']."';";
       if ($result=$conn->query($sql)) {
           return mysqli_fetch_all($result,MYSQLI_ASSOC);
       
@@ -52,7 +52,7 @@ class penyewa{
    
     }
 
-  }
+  
 
     public function acc_sewa($tes=[]){
       include ('auth.php');

@@ -116,8 +116,11 @@
         enctype="multipart/form-data">
         <h1 class="fw-bold">Data Pemohon</h1>
 
-        <input type="hidden" name="ruangan" value="<?= $data['ruangan'] ?>">
-        <input type="text" name="nominal" value="<?= $data['nominal'] ?>">
+        <input type="hidden" name="ruangan" value="<?= $_POST['ruangan'] ?>">
+        <input type="text" name="nominal" value="<?= $_POST['nominal'] ?>">
+        <input type="text" name="tanggal" value="<?= $_POST['tanggal'] ?>">
+        <input type="text" name="mulai" value="<?= $_POST['mulai'] ?>">
+        <input type="text" name="akhir" value="<?= $_POST['akhir'] ?>">
 
         <div class="form-check p-0">
             <h3 class="text-biru">Jabatan</h3>
