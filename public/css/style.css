@@ -128,6 +128,10 @@ body {
   transition: height 0.3s ease-in-out;
 }
 
+.fs-100{
+  font-size: 40px !important;
+}
+
 .background {
   color: var(--background) !important;
   width: 100%;
@@ -138,9 +142,26 @@ body {
   background-size: cover;
   position: relative;
 }
+.relative{
+  position: relative!important;
+  height: 400px;
+  color: var(--background) !important;
+}
+
+.kartu img{
+  position: absolute;
+    width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  z-index: -1;
+
+}
 
 .background h1,
 p {
+  
+  color: var(--background)!important;
   z-index: 3;
 }
 
@@ -154,6 +175,7 @@ p {
     rgba(0, 0, 0, 0.2) 65%,
     var(--primary-color) 100%
   );
+  z-index: 0;
 }
 
 .kartu:hover {

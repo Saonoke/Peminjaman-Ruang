@@ -40,6 +40,19 @@ class penyewa{
 
        
     }
+    
+
+    public function cek_ruang(){
+      include ('auth.php');
+      $sql= "SELECT * FROM peminjaman where jam_awal >= '07:50:00' and jam_akhir <= '13:20:00' and tanggal_pinjam='2023-08-28' and kode_ruang ='501' ;";
+      if ($result=$conn->query($sql)) {
+          return mysqli_fetch_all($result,MYSQLI_ASSOC);
+      
+      }
+   
+    }
+
+  }
 
     public function acc_sewa($tes=[]){
       include ('auth.php');
@@ -54,3 +67,4 @@ class penyewa{
   
 
 }
+

@@ -36,10 +36,11 @@
 </div> -->
         <button  href="#coba" class="rouded-3 btn-sendiri coba " data-bs-toggle="modal" data-bs-target="<?= '#exampleModal'.$key['kode_ruang'] ?>" >
             <div class="kartu kartu-ruangan rounded-3">
-                <div class="px-4 rounded-3 background d-flex flex-column justify-content-end">
+                <div class="px-4 rounded-3 relative  d-flex flex-column justify-content-end">
                     <div class="gradient rounded-3">
                     </div>
-                    <h1 class="fw-semibold mb-0 nama-ruangan"><?= $key['nama_ruangan'] ?></h1>
+                    <img src="<?= BASEURL ?>/image/gedung.jpg" alt="">
+                    <p class="fw-semibold nama-ruangan fs-100 mb-0 "><?= $key['nama_ruangan'] ?></p>
                     <p class="fs-4 mb-0" >Lantai <?= $key['lantai'] ?> </p>
                     <p class='coba second-color fs-4' ><i class="fs-4 bi bi-people-fill"></i> <?= $key['kapasitas'] ?> Person</p>
 
