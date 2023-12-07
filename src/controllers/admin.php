@@ -29,11 +29,13 @@ class admin extends Controller
             $_SESSION['username']=$_POST['username'];
             echo 'hello';
             header('Location: http://localhost/peminjamanRuang/public/admin/dashboard');
+            exit();
         }else{
             header ('Location: http://localhost/peminjamanRuang/public/admin/index');
         }
     }
     function logout(){
+            session_start();
             session_destroy();
             header ('Location: http://localhost/peminjamanRuang/public/admin/index');
             exit();

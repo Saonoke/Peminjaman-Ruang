@@ -64,3 +64,9 @@ select{
 .avail{
     color: green;
 }
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

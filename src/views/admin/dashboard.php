@@ -1,5 +1,6 @@
 <?php 
 session_start();
+echo $_SESSION['username'];
 if(!isset($_SESSION['username']))
 {
      header('Location: http://localhost/peminjamanRuang/public/admin/index');

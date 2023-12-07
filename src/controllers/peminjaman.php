@@ -41,12 +41,11 @@ class peminjaman extends Controller
         
     }
 
-    public function form($ruangan= 0,$nominal=0){
-        $data['ruangan']=$ruangan;
-        $data['nominal']=$nominal;
+    public function form(){
+       
         $this->view('template/header');
         $this->view('template/navbar');
-        $this->view('peminjaman/form',$data);
+        $this->view('peminjaman/form',$_POST);
         $this->view('template/footer');
     }
 
@@ -83,9 +82,7 @@ class peminjaman extends Controller
         }
     }
 
-    function uploadfile(){
-       
-    }
+  
 }
 
 

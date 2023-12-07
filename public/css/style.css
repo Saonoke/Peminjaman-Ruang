@@ -158,11 +158,10 @@ body {
 
 }
 
-.background h1,
-p {
+.kartu-ruangan .relative h1,.kartu-ruangan .relative p {
   
-  color: var(--background)!important;
-  z-index: 3;
+
+  z-index:999!important;
 }
 
 .gradient {

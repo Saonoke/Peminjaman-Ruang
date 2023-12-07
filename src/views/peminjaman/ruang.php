@@ -40,8 +40,8 @@
                     <div class="gradient rounded-3">
                     </div>
                     <img src="<?= BASEURL ?>/image/gedung.jpg" alt="">
-                    <p class="fw-semibold nama-ruangan fs-100 mb-0 "><?= $key['nama_ruangan'] ?></p>
-                    <p class="fs-4 mb-0" >Lantai <?= $key['lantai'] ?> </p>
+                    <p class="fw-semibold text-white nama-ruangan fs-100 mb-0 "><?= $key['nama_ruangan'] ?></p>
+                    <p class="fs-4 mb-0 text-white " >Lantai <?= $key['lantai'] ?> </p>
                     <p class='coba second-color fs-4' ><i class="fs-4 bi bi-people-fill"></i> <?= $key['kapasitas'] ?> Person</p>
 
                 </div>
@@ -65,23 +65,28 @@
                   <h5>Kapasitas : <?= $key['kapasitas'] ?></h5>
                   <h5>tarif ruang : <?= $key['tarif_ruang'] ?></h5>
                   <h5>Fasilitas : <?= $key['fasilitas'] ?> </h5>
-                  <form action="">
+                  <form action="<?= BASEURL ?>/peminjaman/form/" method='post'>
+                    <input type="hidden" name="ruangan" value="<?= $key['kode_ruang'] ?>" >
+                    <input type="hidden" name="nominal" value="<?= $key['tarif_ruang'] ?>" >
+
                         <label class="label-form mb-2" for="tanggal-mulai">Tanggal Pakai</label>
-                        <input class="form-control ctrl mb-2" type="date">
-                        <input class="form-control ctrl mb-2" type="time">
-                        <label for="tanggal-mulai " class="mb-2" >Tanggal Akhir</label>
-                        <input class="form-control ctrl mb-2" type="date">
-                        <input class="form-control ctrl mb-2" type="time">
+                        <input  name="tanggal" class="form-control ctrl mb-2" type="date">
+                        <label for="waktu-mulai " class="mb-2" >waktu mulai</label>
+                        <input name="mulai" class="form-control ctrl mb-2" type="time">
+                        <label for="waktu-akhir " class="mb-2" >waktu Akhir</label>
+                        
+                        <input name="akhir" class="form-control ctrl mb-2" type="time">
 
 
-                  </form>
+                 
             </div>
           </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a href="<?= BASEURL ?>/peminjaman/form/<?= $key['kode_ruang'] ?>/<?= $key['tarif_ruang'] ?>" type="button" class="btn btn-primary">Pinjam!</a>
+        <button href="<?= BASEURL ?>/peminjaman/form/<?= $key['kode_ruang'] ?>/<?= $key['tarif_ruang'] ?>" type="submit" class="btn btn-primary">Pinjam!</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
