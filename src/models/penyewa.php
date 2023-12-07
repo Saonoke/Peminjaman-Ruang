@@ -15,17 +15,30 @@ class penyewa{
     public function insert_penyewa(){
         include ('auth.php');
         $sql = "insert into peminjam values ('".$_POST['nim']."','".$_POST['nama']."','".$_POST['nohp']."','".$_POST['email']."','".$_POST['jabatan']."');";
-        $sql1 = "insert into peminjaman values ('P02','".$_POST['nim']."','".$_POST['ruangan']."','adm2','P001',CURDATE(),CURDATE(),'".$_POST['deskripsi']."','0');";
-        if ($conn->query($sql) === TRUE) {
+        $sql2 = "insert into pembayaran values ('','transfer','".$_POST['nominal']."','".$_POST['nim']."');";
+        $sql3 = "select id_pembayaran from pembayaran where no_peminjam = '".$_POST['nim']."'";
+
+        
+   
+        if ($conn->query($sql) === TRUE && $conn->query($sql2) === TRUE) {
+          
+        $result=$conn->query( $sql3 );
+        $row=$result->fetch_assoc();
+        
+          $sql1 = "insert into peminjaman values ('','".$_POST['nim']."','".$_POST['ruangan']."','adm2',CURDATE(),CURDATE(),'".$_POST['deskripsi']."','0','".$row['id_pembayaran']."');";
       
           if($conn->query($sql1) === TRUE){
-
             return true;
+           
           }
             
           } else {
             return false;
           }
+
+
+
+       
     }
     
 
@@ -40,4 +53,18 @@ class penyewa{
     }
 
   }
+
+    public function acc_sewa($tes=[]){
+      include ('auth.php');
+      $sql = "update peminjaman set is_acc=1 where id_peminjaman = '".$tes['id']."';";
+      if($conn->query($sql) === TRUE){
+        return true;
+      } else{
+        return false;
+      }
+    }
+
+  
+
+}
 

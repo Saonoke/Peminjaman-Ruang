@@ -94,35 +94,6 @@
             color: #666666;
         }
 
-
-        .drag-area .icon {
-            font-size: 50px;
-            color: #ffaa22;
-        }
-
-        .drag-area .support {
-            font-size: 12px;
-            color: rgb(128, 128, 128);
-            margin: 10px 0 15px 0;
-        }
-
-        .drag-area .button {
-            font-size: 20px;
-            font-weight: 500;
-            color: #ffaa22;
-            cursor: pointer;
-        }
-
-        .drag-area.active {
-            border: 2px solid #ffaa22;
-        }
-
-        .drag-area img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         input{
             background: #D9D9D9!important;
             color:black!important;
@@ -137,123 +108,72 @@
             color:black!important;
         }
 
-       
     </style>
+<body>
 
 <div class="padding-top-400 container">
-<form class="p-0" action="<?= BASEURL ?>/peminjaman/tambahPenyewa" method="post">
-    <h1 class="fw-bold" >Data Pemohon</h1>
+    <form class="p-0" action="<?= BASEURL ?>/peminjaman/tambahPenyewa" method="post"
+        enctype="multipart/form-data">
+        <h1 class="fw-bold">Data Pemohon</h1>
 
-      <input type="hidden" name="ruangan" value="<?= $data['ruangan'] ?>">  
-    <div class="form-check p-0">
-        <h3 class="text-biru" >Jabatan</h3>
-        <input class="form-mahasiswa" type="radio" value="1" name="jabatan" id="jabatan">
-        <label class="form-check-label" for="mahasiswa" id="jabatan">Mahasiswa</label>
-        <br>
-        <input class="form-jabatan" type="radio" value="3" name="jabatan" id="jabatan">
-        <label class="form-check-label" for="tamu"id="jabatan">Tamu</label>
-        <br>
-        <input class="form-dosen" type="radio" value="2" name="jabatan" id="jabatan">
-        <label class="form-check-label" for="dosen" id="jabatan">Dosen</label>
-    </div>
+        <input type="hidden" name="ruangan" value="<?= $data['ruangan'] ?>">
+        <input type="text" name="nominal" value="<?= $data['nominal'] ?>">
 
-    <h3>Nama</h3>
-    <input type="text" name="nama" id="opacity" required placeholder="Masukkan Nama Lengkap">
-    <br>
+        <div class="form-check p-0">
+            <h3 class="text-biru">Jabatan</h3>
+            <input class="form-mahasiswa" type="radio" value="1" name="jabatan" id="mahasiswa">
+            <label class="form-check-label" for="mahasiswa">Mahasiswa</label><br>
 
-    <h3>No Identitas</h3>
-    <input type="text" name="nim" id="opacity" required placeholder="Masukkan NIP/NIK/NIM">
-    <br>
+            <input class="form-jabatan" type="radio" value="3" name="jabatan" id="tamu">
+            <label class="form-check-label" for="tamu">Tamu</label><br>
 
-    <h3>Email</h3>
-    <input type="email" name="email" id="opacity" required placeholder="Masukkan Email Anda">
-    <br>
-
-    <h3>No Hp</h3>
-    <input type="text" name="nohp" id="opacity" required placeholder="Masukkan No Telpon Anda (diutamakan memiliki WhatApp)">
-    <br>
-
-    <h3>Deskripsi</h3>
-    <br>
-    <textarea class="deskripsi" id="opacity" rows="4" name="deskripsi"  >Masukkan Alasan dalam peminjaman ruang </textarea>
-    <br>
-
-    <div class="container p-0">
-        <h3>Upload your File :</h3>
-        <div class="drag-area">
-            <div class="icon">
-                <i class="fas fa-images"></i>
-            </div>
-
-            <span class="header">Drag & Drop</span>
-            <span class="header">or <span class="button">browse</span></span>
-            <input type="file" hidden />
-            <span class="support">Supports: JPEG, JPG, PNG</span>
+            <input class="form-dosen" type="radio" value="2" name="jabatan" id="dosen">
+            <label class="form-check-label" for="dosen">Dosen</label>
         </div>
-        <br><br>
-    <button type="submit" class="btn btn-primary mb-5" name="submit">Ajukan</button>
-</form>
+
+        <h3>Nama</h3>
+        <input type="text" name="nama" id="opacity" required placeholder="Masukkan Nama Lengkap"><br>
+
+        <h3>No Identitas</h3>
+        <input type="text" name="nim" id="opacity" required placeholder="Masukkan NIP/NIK/NIM"><br>
+
+        <h3>Email</h3>
+        <input type="email" name="email" id="opacity" required placeholder="Masukkan Email Anda"><br>
+
+        <h3>No Hp</h3>
+        <input type="text" name="nohp" id="opacity"
+            placeholder="Masukkan No Telpon Anda (diutamakan memiliki WhatApp)" required><br>
+
+        <h3>Deskripsi</h3><br>
+        <textarea class="deskripsi" id="opacity" rows="4" name="deskripsi"
+            placeholder="Masukkan Alasan dalam peminjaman ruang" required></textarea><br>   
+
+            <h3>Upload your File :</h3>
+                <span class="header">Pilih File Anda</span>
+                <input type="file" name="fileToUpload" id="fileToUpload" onchange="validateFile()" />
+                <span class="support">Supports: JPEG, JPG, PNG</span>
+    </div>  
+            
+            <br><br>
+        <button type="submit" value="Upload Image" name="submit"  class="btn btn-primary mb-5" >Ajukan</button>
+    </form>
 </div>
 
-
 <script>
-    const dropArea = document.querySelector('.drag-area');
-    const dragText = document.querySelector('.header');
+    function validateFile() {
+        const fileInput = document.getElementById('fileToUpload');
+        const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png'];
 
-    let button = dropArea.querySelector('.button');
-    let input = dropArea.querySelector('input');
+        if (fileInput.files.length > 0) {
+            const fileType = fileInput.files[0].type;
 
-    let file;
-
-    button.onclick = () => {
-        input.click();
-    };
-
-    input.addEventListener('change', function () {
-        file = this.files[0];
-        dropArea.classList.add('active');
-        displayFile();
-    });
-
-    dropArea.addEventListener('dragover', (event) => {
-        event.preventDefault();
-        dropArea.classList.add('active');
-        dragText.textContent = 'Release to Upload';
-    });
-
-    dropArea.addEventListener('dragleave', () => {
-        dropArea.classList.remove('active');
-        dragText.textContent = 'Drag & Drop';
-    });
-
-    // when file is dropped
-    dropArea.addEventListener('drop', (event) => {
-        event.preventDefault();
-        // console.log('File is dropped in drag area');
-        file = event.dataTransfer.files[0]; // grab single file even of user selects multiple files
-        // console.log(file);
-        displayFile();
-    });
-
-    function displayFile() {
-        let fileType = file.type;
-        // console.log(fileType);
-        let validExtensions = ['image/jpeg', 'image/jpg', 'image/png'];
-        if (validExtensions.includes(fileType)) {
-            // console.log('This is an image file');
-            let fileReader = new FileReader();
-            fileReader.onload = () => {
-                let fileURL = fileReader.result;
-                // console.log(fileURL);
-                let imgTag = `<img src="${fileURL}" alt="">`;
-                dropArea.innerHTML = imgTag;
-            };
-            fileReader.readAsDataURL(file);
-        } else {
-            alert('This is not an Image File');
-            dropArea.classList.remove('active');
+            if (!allowedTypes.includes(fileType)) {
+                alert('File harus berupa gambar dengan format JPEG, JPG, atau PNG.');
+                fileInput.value = '';
+            }
         }
     }
 </script>
 </body>
+
 </html>
