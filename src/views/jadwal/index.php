@@ -12,28 +12,33 @@
                     <option>4</option>
                     <option>5</option>
                 </select> -->
-                <input type="date" name="tanggal" class="form-control ctrl" id="">
+                <input type="date" name="tanggal" class="form-control ctrl" value= "<?= (isset($data['post']))?$data['post']['tanggal']:"" ?>" >
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Jam Mulai</label>
-            <input class="form-control ctrl" type="time" name="time_start" id="">
+            <input class="form-control ctrl" type="time" name="time_start" id="" value="<?= (isset($data['post']))?$data['post']['time_start']:"" ?>" >
            
         </div>
 
         <div class="form-group">
         <label for="exampleFormControlSelect1">Jam Selesai</label>
-            <input class="form-control ctrl" type="time" name="time_end" id="">
+            <input class="form-control ctrl" type="time" name="time_end" id="" value="<?= (isset($data['post']))?$data['post']['time_end']:"" ?>" >
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlSelect1">Lantai</label>
             <select name="ruang" class="form-control ctrl" id="exampleFormControlSelect1">
-                <option selected>Pilih kelas</option>
+                <option  <?= (isset($data['post']))?"":"selected" ?>>Pilih kelas</option>
                     <?php 
                         foreach ($data['ruang'] as $key ) {
                             ?>
                             
-                            <option value="<?= $key['kode_ruang'] ?>" ><?= $key['nama_ruangan'] ?></option>
+                            <option value="<?= $key['kode_ruang'] ?>"
+                             <?php if(isset($data['post'])){
+                                if($data['post']['ruang']==$key['kode_ruang']){
+                                    echo "selected";
+                                }
+                            } ?>><?= $key['nama_ruangan'] ?></option>
                             <?php
                         }
                     ?>

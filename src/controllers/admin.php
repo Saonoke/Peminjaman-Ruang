@@ -10,16 +10,25 @@ class admin extends Controller
         
     }
     
-    function dashboard()
+    function dashboard($index=1)
     {
-        $data['jumlah']=$this->model('user_model')->get_user();
-        $data['penyewa']=$this->model('penyewa')->get_penyewa();
         
+        $data['jumlah']=$this->model('user_model')->get_user();
+        $data['total'] =  $data['jumlah'][1];
+        $data['index']=$index;
+        $data['penyewa']=$this->model('penyewa')->get_penyewa($data['index']);
+        
+       
+        
+
+
         $this->view('template/header');
         $this->view('admin/dashboard',$data);
        
         $this->view('template/footer');
     }
+
+    
 
     function login(){
       
@@ -50,5 +59,17 @@ class admin extends Controller
         if($cek){
             header('Location: http://localhost/peminjamanRuang/public/admin/dashboard');
         }
+    }
+
+    function request($index=1){
+        $data['jumlah']=$this->model('user_model')->get_user();
+        $data['total'] =  $data['jumlah'][0];
+        $data['index']=$index;
+        $data['penyewa']=$this->model('penyewa')->get_request($data['index']);
+        
+        $this->view('template/header');
+        $this->view('admin/dashboard',$data);
+       
+        $this->view('template/footer');
     }
 }

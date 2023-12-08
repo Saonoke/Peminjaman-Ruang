@@ -23,8 +23,11 @@ class peminjaman extends Controller
         $this->view('peminjaman/peminjaman');
         $this->view('template/footer');
     }
-    public function status(){
-        $data['penyewa']=$this->model('penyewa')->get_penyewa();
+    public function status($index=1){
+      $data['jumlah']=$this->model('user_model')->get_user();
+      $data['total'] =  $data['jumlah'][0];
+      $data['index']=$index;
+        $data['penyewa']=$this->model('penyewa')->get_request($index);
         $this->view('template/header');
         $this->view('template/navbar');
         $this->view('peminjaman/status',$data);

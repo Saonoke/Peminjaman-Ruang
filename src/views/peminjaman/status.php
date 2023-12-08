@@ -2,7 +2,7 @@
     <div class="table-wrapper">
     <div class="search-box">
          <i class="bi bi-search" ></i>   
-        <input placeholder="cari" type="text">
+        <input onkeyup="search()" id="searchitem" placeholder="cari" type="text">
     </div>
 
     <table id="coba" class="table" > 
@@ -27,10 +27,10 @@
             foreach ($data['penyewa'] as $key )
             {
                 ?>
-                <tr>
+                <tr class="cobacoba">
                     
-                    <td><?= $count++ ?></td>
-                    <td><?= $key['nama'] ?></td>
+                    <td><?= $key['id'] ?></td>
+                    <td class="namapeminjam" ><?= $key['nama'] ?></td>
                     <td><?= $key['kategori'] ?></td>
                         <td><?= $key['deskripsi'] ?></td>
                         <td><?= $key['ruangan'] ?></td>
@@ -43,8 +43,75 @@
                 <?php
             }
             ?>
+ 
+       
+                <div class="kosong"></div>
+               
+
+         
             </tbody> 
         </table>
+
+        <div class="paging d-flex justify-content-end">
+<?php 
+    $total= intval($data['total']['jumlah']);
+    $total_pages=ceil($total/20);
+    
+    $batas=$data['index']+4;
+    if($data['index']>1){
+        $mulai= $data['index']-1;
+    }else{
+        $mulai=1;
+    }
+            for($mulai;$mulai<$batas;$mulai++){
+                if($mulai<=$total_pages){
+
+                
+                ?>
+                <a class="me-2 text-decoration-none text-black p-2 rounded-2 bg-white" href="<?= BASEURL ?>/peminjaman/status/<?= $mulai ?>" ><?=$mulai ?></a>
+                <?php
+                }
+            }
+    ?>
+
+</div>
     </div>
 
 </div>
+
+<script>
+    const search = () => {
+    const kosong =document.querySelector('.kosong');
+    kosong.style.display= 'none';
+
+    const searchbox= document.querySelector('#searchitem').value.toUpperCase();
+    const product = document.querySelectorAll('.cobacoba');
+    const pname=document.querySelectorAll('.namapeminjam');
+    let hitung=0;
+    for (let i = 0; i < pname.length; i++) {
+   
+      let match= product[i].querySelector('.namapeminjam');
+
+      if(match){
+        let textvalue=match.textContent || match.innerHTML;
+        if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+          product[i].style.display= '';
+        }else{
+          product[i].style.display= 'none';
+            hitung++;
+        }
+      }
+      
+    }
+  
+    if(hitung==pname.length){
+    
+     kosong.style.display= 'block';
+     kosong.innerHTML="coba";
+    }
+
+
+
+  }
+
+</script>
