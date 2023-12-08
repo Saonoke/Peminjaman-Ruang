@@ -16,6 +16,7 @@ class jadwal extends Controller
     public function search(){
         $data['ruang']=$this->model('ruang_model')->get_kelas();
         $data['check' ]= $this->model('penyewa')->cek_ruang($_POST);
+        $data['post']=$_POST;
         $this->view('template/header');
         $this->view('template/navbar');
         $this->view('jadwal/index',$data);

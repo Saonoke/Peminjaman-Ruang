@@ -1,6 +1,5 @@
 <?php 
 session_start();
-echo $_SESSION['username'];
 if(!isset($_SESSION['username']))
 {
      header('Location: http://localhost/peminjamanRuang/public/admin/index');
@@ -14,7 +13,7 @@ if(!isset($_SESSION['username']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="<?= BASEURL ?>/css/admin.css?v=2">
+    <link rel="stylesheet" href="<?= BASEURL ?>/css/admin.css?v=3">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   
@@ -33,30 +32,18 @@ if(!isset($_SESSION['username']))
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" ></script>
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js" ></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<script>
-    
-    const button = document.querySelector('#hamburger');
 
-button.addEventListener('click',()=>{
-  console.log('coba')
-  const list = document.querySelector('.aduh');
-  console.log(list)
-  list.style.display = 'flex';
-})
-      
-</script>
 </head>
 <body>
     <!-- Custom -->
-<div class="bg-ungu vh-1000 aduh ">
+<div class="bg-ungu vh-1000 aduh">
   
   <div class="min-vh-100 d-flex flex-column align-items-start justify-content-center ">
      
   <ul class="nav nav-pills flex-column">
       <li class="nav-item">
           <a href="#" class="nav-link  text-white active">
-              <i class="fs-5 bi bi-grid-1x2-fill me-2"></i><span class="fs-4  d-gone">Dashboard</span>
-
+          <i class="fs-5 bi bi-grid-1x2-fill me-2"></i><span class="fs-4 d-gone">Dashboard</span>
           </a>
       </li>
       <li class="nav-item">
@@ -77,9 +64,9 @@ button.addEventListener('click',()=>{
 
 
 
-    <div class="bg-ungu col-auto col-lg-2 vh-1000  d-md-flex d-none ">
+    <div class="bg-ungu col-auto col-lg-2 vh-1000  d-md-flex d-none pt-3">
   
-        <div class="min-vh-100 d-flex flex-column align-items-start justify-content-center ">
+        <div class="min-vh-100 d-flex flex-column align-items-start justify-content-start  ">
            
         <ul class="nav nav-pills flex-column">
             <li class="nav-item">
@@ -100,15 +87,14 @@ button.addEventListener('click',()=>{
     </div>
     <div class="col full-a">
         <div class="top d-flex justify-content-between align-items-center mt-2 px-3">
-            <button type="button" class="btn btn-primary coba zindex" id="hamburger" ><i class="bi bi-list" ></i></button>
-        <h1>Dashboard</h1>
+            <button type="button" class="btn btn-primary coba zindex hamburger" id="hamburger" ><i class="bi bi-list" ></i></button>
+        <h1 class="fw-bold" >Dashboard</h1>
         <div class="btn-group">
   <button type="button" class="btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
   <i class="fs-5 fa fa-user"></i>
   </button>
   <ul class="dropdown-menu dropdown-menu-lg-end">
-    <li><button class="dropdown-item" type="button">Action</button></li>
-    <li><button class="dropdown-item" type="button">Another action</button></li>
+    
     <form method="post" action="<?= BASEURL ?>/admin/logout">
     <li>
         <button class="dropdown-item" type="submit" name="logout">Log Out</button>
@@ -122,18 +108,27 @@ button.addEventListener('click',()=>{
     <main class="mt-5 d-flex justify-content-between gap-5  flex-column"> 
 
     <div class="information flex-wrap d-flex gap-2">
-    <div class="card-total d-flex  justify-content-start gap-2 align-items-center">
+  <a href="<?= BASEURL ?>/admin/request" class="text-decoration-none text-black" >
+  <div class="card-total d-flex  justify-content-start gap-2 align-items-center">
             <div class="box-yellow" id="yellow"></div>
             <h1><?= $jumlah_satu = implode(", ",$data['jumlah'][0])?></h1>
             <h2>Request</h2>
         </div>
+
+  </a>
+   <a href="<?= BASEURL ?>/admin/dashboard" class="text-decoration-none text-black" >
         <div class="card-total d-flex justify-content-start gap-2 align-items-center">
             <div class="box-green" id="yellow"></div>
             <h1><?= $jumlah_satu = implode(", ",$data['jumlah'][1]); ?></h1>
             <h2>Accepted</h2>
         </div>
+        </a>
     </div>
   <div class="table-wrapper">
+  <div class="search-box bg-white">
+         <i class="bi bi-search" ></i>   
+        <input onkeyup="search()" id="searchitem" placeholder="cari" type="text">
+    </div>
   <table id="coba" class="table " > 
             <thead>
 
@@ -156,10 +151,10 @@ button.addEventListener('click',()=>{
             foreach ($data['penyewa'] as $key )
             {
                 ?>
-                <tr>
+                <tr class="cobacoba" >
                     
-                    <td><?= $count++ ?></td>
-                    <td><?= $key['nama'] ?></td>
+                    <td><?= $key['id'] ?></td>
+                    <td class="namapeminjam" ><?= $key['nama'] ?></td>
                     <td><?= $key['kategori'] ?></td>
                         <td><?= $key['deskripsi'] ?></td>
                         <td><?= $key['ruangan'] ?></td>
@@ -175,9 +170,33 @@ button.addEventListener('click',()=>{
                 <?php
             }
             ?>
+            <div class="kosong"></div>
             </tbody> 
         </table>
+<div class="paging d-flex justify-content-end">
+<?php 
+    $total= intval($data['total']['jumlah']);
+    $total_pages=ceil($total/20);
+    
+    $batas=$data['index']+4;
+    if($data['index']>1){
+        $mulai= $data['index']-1;
+    }else{
+        $mulai=1;
+    }
+            for($mulai;$mulai<$batas;$mulai++){
+                if($mulai<=$total_pages){
 
+                
+                ?>
+                <a class="me-2 text-decoration-none text-black p-2 rounded-2 bg-white" href="<?= BASEURL ?>/admin/dashboard/<?= $mulai ?>" ><?=$mulai ?></a>
+                <?php
+                }
+            }
+    ?>
+
+</div>
+   
         
 
 
@@ -199,6 +218,7 @@ button.addEventListener('click',()=>{
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href='<?= BASEURL ?>/admin/acc/<?= $key['id'] ?>' type="button" class="btn btn-danger">Decline</a>
         <a href='<?= BASEURL ?>/admin/acc/<?= $key['id'] ?>' type="button" class="btn btn-success">Accept</a>
       </div>
     </div>
@@ -218,6 +238,56 @@ button.addEventListener('click',()=>{
 </div>
 
 </div>
+<script>
     
+    const button = document.getElementById('hamburger');
+    console.log(button);
+
+button.addEventListener('click',()=>{
+  console.log('tes');
+  const list = document.querySelector('.aduh');
+  
+  list.style.display = 'flex';
+})
+      
+</script>    
+
+<script>
+    const search = () => {
+    const kosong =document.querySelector('.kosong');
+    kosong.style.display= 'none';
+
+    const searchbox= document.querySelector('#searchitem').value.toUpperCase();
+    const product = document.querySelectorAll('.cobacoba');
+    const pname=document.querySelectorAll('.namapeminjam');
+    let hitung=0;
+    for (let i = 0; i < pname.length; i++) {
+   
+      let match= product[i].querySelector('.namapeminjam');
+
+      if(match){
+        let textvalue=match.textContent || match.innerHTML;
+        if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+          product[i].style.display= '';
+        }else{
+          product[i].style.display= 'none';
+            hitung++;
+        }
+      }
+      
+    }
+  
+    if(hitung==pname.length){
+    
+     kosong.style.display= 'block';
+     kosong.innerHTML="coba";
+    }
+
+
+
+  }
+
+</script>
+
 </body>
 </html>

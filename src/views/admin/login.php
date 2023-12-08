@@ -1,6 +1,6 @@
 <?php
 
-// if(session_status()== )
+
 
 
 
@@ -16,7 +16,7 @@
             <input type="text" class="form-control" name="username" placeholder="Username" id="">
 
             <input type="password" name="password" class="form-control" placeholder="Password">
-            <button type="submit" class="btn btn-secondary w-full d-flex align-items-center justify-content-center fw-semibold" >Login</button>
+            <button type="submit" class="btn btn-secondary w-full d-flex align-items-center text-white justify-content-center fw-semibold" >Login</button>
 
               
         </form>

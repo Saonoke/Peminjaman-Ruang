@@ -127,7 +127,7 @@
     <a href="#" class="mt-5 btn py-2 btn-primary btn-bd-primary">Pinjam Sekarang !</a>
 </div>
 
-<section id="spec" class="d-flex width-100">
+<section id="spec" class="d-flex width-100 flex-wrap">
     <div class="bg-sec width-70">
     <div class="d-flex justify-content-center ">
         <div class="container px-5 p-5">
@@ -153,8 +153,8 @@
             </div>
           <div class="right">
           <div class="mb-5">
-          <img class="icon-vektor" src="<?= BASEURL ?>/image/wa.png" alt="">
-          <p>
+          <img class="icon-vektor mb-3" src="<?= BASEURL ?>/image/wa.png" alt="">
+          <p class=''>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
               Quisquam aperiam ab neque beatae sed dolorem temporibus 
               alias suscipit quasi similique.
@@ -173,17 +173,29 @@
     </div>    
 </div>
 </div>
-    <div class="bg-image width-50">
-        <img class="rotate" src="<?= BASEURL ?>/image/wave.svg" alt="">      
+    <div class="bg-image width-50 ">
+        <img class="rotate " src="<?= BASEURL ?>/image/wave.svg" alt="">      
 </div> 
 </section>
 
 
-<section id="about">
+<section id="about" class="my-5" >
     <div class="container">
         <h1 class="fw-semibold size70">SISPEMRU</h1>
         <P>Sistem Peminjaman Ruang Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
             printer took a galley of type and scrambled it to make a type specimen book. </P>
+    </div>
+</section>
+
+<section id= "cta"  class="bg-blue p-5"  >
+    <div class="container">
+        <div class="flex justify-content-center">
+            <h1 class="text-center text-white fw-semibold" style="width: 30rem;" >
+                Peminjaman Ruang Dan Gedung 
+            </h1>
+                <p class="text-center text-white fs-2 fw-normal " >Semakin Mudah</p>
+                <a href="<?= BASEURL ?>/peminjaman" class="btn btn-secondary" >Pinjam Sekarang!</a>
+        </div>
     </div>
 </section>
