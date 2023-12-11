@@ -59,7 +59,7 @@
       <div class="modal-body">
           <div class="d-flex gap-3">
             <div class="image-modal">
-                <img src="<?= BASEURL ?>/image/gedung.jpg" alt="">
+                <img src="<?= BASEURL . "/ruang/" . $key['gambar_ruang'] ?>" alt="">
             </div>
             <div class="desc">
                   <h5>Kapasitas : <?= $key['kapasitas'] ?></h5>
