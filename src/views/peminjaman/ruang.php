@@ -39,7 +39,7 @@
                 <div class="px-4 rounded-3 relative  d-flex flex-column justify-content-end">
                     <div class="gradient rounded-3">
                     </div>
-                    <img src="<?= BASEURL ?>/image/gedung.jpg" alt="">
+                    <img src="<?= BASEURL . "/ruang/" . $key['gambar_ruang'] ?>" alt="">
                     <p class="fw-semibold text-white nama-ruangan fs-100 mb-0 "><?= $key['nama_ruangan'] ?></p>
                     <p class="fs-4 mb-0 text-white " >Lantai <?= $key['lantai'] ?> </p>
                     <p class='coba second-color fs-4' ><i class="fs-4 bi bi-people-fill"></i> <?= $key['kapasitas'] ?> Person</p>
@@ -59,7 +59,7 @@
       <div class="modal-body">
           <div class="d-flex gap-3">
             <div class="image-modal">
-                <img src="<?= BASEURL ?>/image/gedung.jpg" alt="">
+                <img src="<?= BASEURL . "/ruang/" . $key['gambar_ruang'] ?>" alt="">
             </div>
             <div class="desc">
                   <h5>Kapasitas : <?= $key['kapasitas'] ?></h5>
