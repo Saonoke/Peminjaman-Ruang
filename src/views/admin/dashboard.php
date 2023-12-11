@@ -33,6 +33,28 @@ if(!isset($_SESSION['username']))
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js" ></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
+<style>
+    .pagination {
+        display: inline-block;
+        padding: 10px 18px;
+        margin-right: 5px;
+        background-color: white;
+        color: grey;
+        border-radius: 50%;
+        text-decoration: none;
+    }
+
+    .pagination:hover {
+        background-color: #e2e6ea;
+    }
+
+    .pagination.active {
+        background-color: #1567EE;
+        color: #fff;
+        cursor: default;
+    }
+</style>
+
 </head>
 <body>
     <!-- Custom -->
@@ -173,28 +195,24 @@ if(!isset($_SESSION['username']))
             <div class="kosong"></div>
             </tbody> 
         </table>
+
 <div class="paging d-flex justify-content-end">
-<?php 
-    $total= intval($data['total']['jumlah']);
-    $total_pages=ceil($total/20);
+    <?php 
+        $total = intval($data['total']['jumlah']);
+        $total_pages = ceil($total / 20);
     
-    $batas=$data['index']+4;
-    if($data['index']>1){
-        $mulai= $data['index']-1;
-    }else{
-        $mulai=1;
-    }
-            for($mulai;$mulai<$batas;$mulai++){
-                if($mulai<=$total_pages){
+        $batas = $data['index'] + 4;
+        $mulai = ($data['index'] > 1) ? $data['index'] - 1 : 1;
 
-                
-                ?>
-                <a class="me-2 text-decoration-none text-black p-2 rounded-2 bg-white" href="<?= BASEURL ?>/admin/dashboard/<?= $mulai ?>" ><?=$mulai ?></a>
-                <?php
-                }
-            }
+        for ($mulai; $mulai < $batas; $mulai++) {
+            if ($mulai <= $total_pages) {
+                $class = ($mulai == $data['index']) ? 'pagination active' : 'pagination';
     ?>
-
+                <a class="<?= $class ?>" href="<?= BASEURL ?>/admin/dashboard/<?= $mulai ?>"><?= $mulai ?></a>
+    <?php
+            }
+        }
+    ?>
 </div>
    
         
