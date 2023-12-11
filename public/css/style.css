@@ -119,6 +119,19 @@ body {
   padding-top: 100px;
 }
 
+.bg-blue{
+  background: var(--primary-color)!important;
+}
+
+.btn-secondary{
+  --bs-btn-bg: var(--background) !important;
+  --bs-btn-hover-color:black!important;
+  color:var(--primary-color)!important;
+  font-weight: 600!important;
+}
+
+
+
 /* end home & navbar */
 
 /* Card */
@@ -126,6 +139,10 @@ body {
   width: 350px;
   height: 400px;
   transition: height 0.3s ease-in-out;
+}
+
+.fs-100{
+  font-size: 40px !important;
 }
 
 .background {
@@ -138,10 +155,26 @@ body {
   background-size: cover;
   position: relative;
 }
+.relative{
+  position: relative!important;
+  height: 400px;
+  color: var(--background) !important;
+}
 
-.background h1,
-p {
-  z-index: 3;
+.kartu img{
+  position: absolute;
+    width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  z-index: -1;
+
+}
+
+.kartu-ruangan .relative h1,.kartu-ruangan .relative p, .background h1,.background p{
+  
+
+  z-index:999!important;
 }
 
 .gradient {
@@ -154,6 +187,7 @@ p {
     rgba(0, 0, 0, 0.2) 65%,
     var(--primary-color) 100%
   );
+  z-index: 0;
 }
 
 .kartu:hover {
@@ -341,7 +375,7 @@ form a:hover {
   border:none!important;
   color: black!important;;
   height: 30px;
-  width:90%;
+  width:90%!important;
   
 }
 .search-box input::placeholder{

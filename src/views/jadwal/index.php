@@ -12,28 +12,33 @@
                     <option>4</option>
                     <option>5</option>
                 </select> -->
-                <input type="date" name="tanggal" class="form-control ctrl" id="">
+                <input type="date" name="tanggal" class="form-control ctrl" value= "<?= (isset($data['post']))?$data['post']['tanggal']:"" ?>" >
         </div>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">Lantai</label>
-            <select name="lantai" class="form-control ctrl" id="exampleFormControlSelect1">
-                <option selected>Pilih Lantai</option>
-                <option>Lantai 5</option>
-                <option>Lantai 6</option>
-                <option>Lantai 7</option>
-                <option>Lantai 8</option>
-            </select>
+            <label for="exampleFormControlSelect1">Jam Mulai</label>
+            <input class="form-control ctrl" type="time" name="time_start" id="" value="<?= (isset($data['post']))?$data['post']['time_start']:"" ?>" >
+           
+        </div>
+
+        <div class="form-group">
+        <label for="exampleFormControlSelect1">Jam Selesai</label>
+            <input class="form-control ctrl" type="time" name="time_end" id="" value="<?= (isset($data['post']))?$data['post']['time_end']:"" ?>" >
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlSelect1">Lantai</label>
             <select name="ruang" class="form-control ctrl" id="exampleFormControlSelect1">
-                <option selected>Pilih kelas</option>
+                <option  <?= (isset($data['post']))?"":"selected" ?>>Pilih kelas</option>
                     <?php 
                         foreach ($data['ruang'] as $key ) {
                             ?>
                             
-                            <option><?= $key['nama_ruangan'] ?></option>
+                            <option value="<?= $key['kode_ruang'] ?>"
+                             <?php if(isset($data['post'])){
+                                if($data['post']['ruang']==$key['kode_ruang']){
+                                    echo "selected";
+                                }
+                            } ?>><?= $key['nama_ruangan'] ?></option>
                             <?php
                         }
                     ?>
@@ -44,5 +49,56 @@
 
         </form>
         
+
+
     </div>
+
+
+    <div class="container">
+    <?php 
+    if(isset($data['check'])){
+      
+            if(empty( $data['check'])){
+                ?>
+                <div class="flex gap-3">
+                <h1 class="text-center mt-5 fw-semibold" >Kosong !! Silahkan Melakukan Pemesanan</h1>
+                <a href="<?= BASEURL ?>/peminjaman/ruang" class="btn btn-primary" >Pinjam Ruang</a>
+                </div>
+                      
+                <?php
+            }else{
+
+        ?>
+         <div class="table-wrapper mt-5">
+        <table   id="coba" class="table">
+        <thead>
+            <tr>
+                <th>Nama Ruangan</th>
+                <th>Tanggal</th>
+                <th>Jam Mulai</th>
+                <th>Jam Akhir</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+      foreach ($data['check'] as $key ) {
+            ?>
+                <tr>
+                    <td><?= $key['ruang'] ?></td>
+                    <td><?= $key['tanggal'] ?></td>
+                    <td><?= $key['mulai'] ?></td>
+                    <td><?= $key['akhir'] ?></td>
+                </tr>
+            <?php
+        }
+    }
+}
     
+    
+    ?>
+    </tbody>
+</table>
+</div>
+    
+    </div>
+   
