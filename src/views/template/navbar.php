@@ -3,7 +3,7 @@
 
     <div class="container ">
         <div class="navbar-brand d-flex align-items-center gap-3">
-            <a href="" class="d-flex align-items-center gap-3 nav-link">
+            <a href="<?= BASEURL ?>" class="d-flex align-items-center gap-3 nav-link">
                 <img src="<?= BASEURL ?>/image/POLINEMA.PNG" alt="">
                 <p style="font-size:24px;" class="mb-0 fw-bold">POLINEMA</p>
 

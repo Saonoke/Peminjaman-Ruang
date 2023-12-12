@@ -21,7 +21,7 @@ if(!isset($_SESSION['username']))
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap"
         rel="stylesheet">
-        <script src="https://kit.fontawesome.com/e6bc1ebaee.js" crossorigin="anonymous"></script>
+    
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
@@ -31,7 +31,7 @@ if(!isset($_SESSION['username']))
 <script src="https://code.jquery.com/jquery-3.7.0.js" ></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" ></script>
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js" ></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 
 <style>
     .pagination {
@@ -57,86 +57,45 @@ if(!isset($_SESSION['username']))
 
 </head>
 <body>
-    <!-- Custom -->
-<!-- <div class="bg-ungu vh-1000 aduh">
-  
-  <div class="min-vh-100 d-flex flex-column align-items-start justify-content-center ">
-     
-  <ul class="nav nav-pills flex-column">
-      <li class="nav-item">
-          <a href="#" class="nav-link  text-white active">
-          <i class="fs-5 bi bi-grid-1x2-fill me-2"></i><span class="fs-4 d-gone">Dashboard</span>
-          </a>
-      </li>
-      <li class="nav-item">
-          <a href="#" class="nav-link text-white"><i class="fs-5 bi bi-calendar3 me-2"></i><span class="fs-4 d-gone">Jadwal</span></a>
-      </li>
-      <li class="nav-item">
-          <a href="#" class="nav-link text-white"><i class="fs-5 bi bi-archive-fill me-2"></i><span class="fs-4 d-gone">Arsip</span></a>
-      </li>
 
-  </ul>
-  </div>
-</div> -->
 
-<!-- custom -->
-<div class="bg-ungu col-auto col-lg-2 vh-1000 pt-3 aduh">
-        
-  
-        <div class="min-vh-100 d-flex flex-column align-items-start justify-content-start ps-3">
-        <button type="button" class="btn btn-primary mb-3 " id="close" ><i class="bi bi-x" ></i></button>
-           
-        <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-                <a href="#" class="nav-link  text-white active">
-                    <i class="fs-5 bi bi-grid-1x2-fill me-2"></i><span class="fs-4  d-gone">Dashboard</span>
 
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<?= BASEURL ?>/admin/jadwal" class="nav-link text-white"><i class="fs-5 bi bi-calendar3 me-2"></i><span class="fs-4 d-gone">Jadwal</span></a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-white"><i class="fs-5 bi bi-archive-fill me-2"></i><span class="fs-4 d-gone">Arsip</span></a>
-            </li>
-
-        </ul>
-        </div>
-    </div>
-    <div id="tes"  class="padding">
+<div id="tes"  class="padding">
 <div class="">
    
 
 
 
   
-    <div id="tes" class="">
-        <div class="top d-flex justify-content-between align-items-center mt-2 px-3">
-            <button type="button" class="btn btn-primary  zindex hamburger" id="hamburger" ><i class="bi bi-list" ></i></button>
-        <h1 class="fw-bold" >Dashboard</h1>
+    <div class="">
+    <div class="top d-flex justify-content-between align-items-center mt-2 px-3">
+        <button type="button" class="btn btn-primary zindex hamburger" id="hamburger"><i
+                class=" bi bi-list"></i></button>
+        <h1 class="fw-bold">Dashboard</h1>
         <div class="btn-group">
-  <button type="button" class="btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-  <i class="fs-5 fa fa-user"></i>
-  </button>
-  <ul class="dropdown-menu dropdown-menu-lg-end">
-    
-    <form   method="post" action="<?= BASEURL ?>/admin/logout">
-    <li>
-        <button class="dropdown-item" type="submit" name="logout">Log Out</button>
-    </li>
-</form>
+            <button type="button" class="btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown"
+                data-bs-display="static" aria-expanded="false">
+                <i class="fs-5 bi bi-gear-fill"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-lg-end">
 
-  </ul>
-</div>
+                <form method="post" action="<?= BASEURL ?>/admin/logout">
+                    <li>
+                        <button class="dropdown-item" type="submit" name="logout">Log Out</button>
+                    </li>
+                </form>
 
+            </ul>
         </div>
+
+    </div>
     <main class="mt-5 d-flex justify-content-between gap-5  flex-column"> 
 
     <div class="information flex-wrap d-flex gap-2">
   <a href="<?= BASEURL ?>/admin/request" class="text-decoration-none text-black" >
   <div class="card-total d-flex  justify-content-start gap-2 align-items-center">
             <div class="box-yellow" id="yellow"></div>
-            <h1><?= $jumlah_satu = implode(", ",$data['jumlah'][0])?></h1>
+            <h1><?= $jumlah_satu = implode(",    ",$data['jumlah'][0])?></h1>
             <h2>Request</h2>
         </div>
 
@@ -248,6 +207,10 @@ if(!isset($_SESSION['username']))
 
         <h5 class="fw-semibold" >No Identitas :</h5>
         <h5><?= $key['identitas'] ?></h5>
+
+        <h5 class="fw-semibold" >No Telp :</h5>
+        
+        <h5><?= $key['nomer'] ?></h5>
 
         <h5 class="fw-semibold" >Kategori :</h5>
         <h5><?= $key['kategori'] ?></h5>

@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-transparent">
- 
+
     <div class="container ">
         <div class="navbar-brand d-flex align-items-center gap-3">
-            <a href="" class="d-flex align-items-center gap-3 nav-link">
+            <a href="<?= BASEURL ?>" class="d-flex align-items-center gap-3 nav-link">
                 <img src="<?= BASEURL ?>/image/POLINEMA.PNG" alt="">
                 <p style="font-size:24px;" class="color-white mb-0 fw-bold">POLINEMA</p>
 
@@ -55,7 +55,8 @@
             <h1 class="semi-bold ">Peminjaman Ruang JTI</h1>
             <h3 class="mt-3">Peminjaman Ruang oleh Mahasiswa, Dosen,Pihak luar yang ingin meminjam gedung di Polinema
             </h3>
-            <a href="#" class="mt-2 mb-5 btn py-2 btn-primary btn-bd-primary">Pinjam Sekarang !</a>
+            <a href="<?= BASEURL ?>/peminjaman/ruang" class="mt-2 mb-5 btn py-2 btn-primary btn-bd-primary">Pinjam
+                Sekarang !</a>
         </div>
 
 
@@ -129,57 +130,50 @@
 
 <section id="spec" class="d-flex width-100 flex-wrap">
     <div class="bg-sec width-70">
-    <div class="d-flex justify-content-center ">
-        <div class="container px-5 p-5">
-        <div class="d-flex justify-content-between align-items-center gap-3">
-            <div class="left">
-            <div class="mb-5">
-                <img class="icon" src="<?= BASEURL ?>/image/time.png" alt="">
-            <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste molestias eaque quos mollitia facilis temporibus possimus quae quo aspernatur dignissimos.
-            </p>    
-            
+        <div class="d-flex justify-content-center ">
+            <div class="container px-5 p-5">
+                <div class="d-flex justify-content-around align-items-center ">
+                    <div class="left">
+                        <div class="mb-5">
+                            <img class="icon" src="<?= BASEURL ?>/image/time.png" alt="">
+                            <p>
+                                Waktu Pengajuan Peminjaman Lebih Cepat
+                            </p>
 
-            </div>
-            <div>
-            <img class="icon-vektor" src="<?= BASEURL ?>/image/arrow.png" alt="">
-            <p>
 
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Quisquam aperiam ab neque beatae sed dolorem temporibus 
-                alias suscipit quasi similique.
-            </p>    
+                        </div>
+                        <div>
+                            <img class="icon-vektor" src="<?= BASEURL ?>/image/arrow.png" alt="">
+                            <p>
+                                Di Proses Cepat Oleh Sistem Yang Canggih
+                            </p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="mb-5">
+                            <img class="icon-vektor mb-3" src="<?= BASEURL ?>/image/wa.png" alt="">
+                            <p class=''>
+                                Pemberitahuan Langsung Lewat Email & Whastapp
+                            </p>
+                        </div>
+                        <div>
+                            <img class="icon" src="<?= BASEURL ?>/image/calendar.png" alt="">
+                            <p>
+                                Jadwal Real-Time Sesuai Ketersediaan Ruang
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-          <div class="right">
-          <div class="mb-5">
-          <img class="icon-vektor mb-3" src="<?= BASEURL ?>/image/wa.png" alt="">
-          <p class=''>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-              Quisquam aperiam ab neque beatae sed dolorem temporibus 
-              alias suscipit quasi similique.
-          </p>  
-            </div>
-            <div>
-            <img class="icon" src="<?= BASEURL ?>/image/calendar.png" alt="">
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Quisquam aperiam ab neque beatae sed dolorem temporibus 
-                alias suscipit quasi similique.
-            </p>    
-            </div>   
-          </div>
         </div>
-    </div>    
-</div>
-</div>
+    </div>
     <div class="bg-image width-50 ">
-        <img class="rotate " src="<?= BASEURL ?>/image/wave.svg" alt="">      
-</div> 
+        <img class="rotate " src="<?= BASEURL ?>/image/wave.svg" alt="">
+    </div>
 </section>
 
 
-<section id="about" class="my-5" >
+<section id="about" class="my-5">
     <div class="container">
         <h1 class="fw-semibold size70">SISPEMRU</h1>
         <P>Sistem Peminjaman Ruang Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -188,14 +182,14 @@
     </div>
 </section>
 
-<section id= "cta"  class="bg-blue p-5"  >
+<section id="cta" class="bg-blue p-5">
     <div class="container">
         <div class="flex justify-content-center">
-            <h1 class="text-center text-white fw-semibold" style="width: 30rem;" >
-                Peminjaman Ruang Dan Gedung 
+            <h1 class="text-center text-white fw-semibold" style="width: 30rem;">
+                Peminjaman Ruang Dan Gedung
             </h1>
-                <p class="text-center text-white fs-2 fw-normal " >Semakin Mudah</p>
-                <a href="<?= BASEURL ?>/peminjaman" class="btn btn-secondary" >Pinjam Sekarang!</a>
+            <p class="text-center text-white fs-2 fw-normal ">Semakin Mudah</p>
+            <a href="<?= BASEURL ?>/peminjaman" class="btn btn-secondary">Pinjam Sekarang!</a>
         </div>
     </div>
 </section>
