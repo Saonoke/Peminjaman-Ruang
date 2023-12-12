@@ -57,30 +57,34 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-          <div class="d-flex gap-3">
+          <div class="d-flex gap-3 px-5 ">
             <div class="image-modal">
                 <img src="<?= BASEURL . "/ruang/" . $key['gambar_ruang'] ?>" alt="">
             </div>
             <div class="desc">
-                  <h5>Kapasitas : <?= $key['kapasitas'] ?></h5>
-                  <h5>tarif ruang : <?= $key['tarif_ruang'] ?></h5>
-                  <h5>Fasilitas : <?= $key['fasilitas'] ?> </h5>
-                  <form action="<?= BASEURL ?>/peminjaman/form/" method='post'>
-                    <input type="hidden" name="ruangan" value="<?= $key['kode_ruang'] ?>" >
-                    <input type="hidden" name="nominal" value="<?= $key['tarif_ruang'] ?>" >
-
-                        <label class="label-form mb-2" for="tanggal-mulai">Tanggal Pakai</label>
-                        <input  name="tanggal" class="form-control ctrl mb-2" type="date">
-                        <label for="waktu-mulai " class="mb-2" >waktu mulai</label>
-                        <input name="mulai" class="form-control ctrl mb-2" type="time">
-                        <label for="waktu-akhir " class="mb-2" >waktu Akhir</label>
-                        
-                        <input name="akhir" class="form-control ctrl mb-2" type="time">
+                  <h5 class="fw-semibold" >Kapasitas :  </h5> <p><?= $key['kapasitas'] ?> </p>
+                  <h5 class="fw-semibold">tarif ruang :</h5> <p> <?= $key['tarif_ruang'] ?></p> 
+                  <h5 class="fw-semibold" >Fasilitas :  </h5> <p><?= $key['fasilitas'] ?></p>
+                  
 
 
                  
             </div>
+           
           </div>
+          <div class="form  py-4 px-5 ">
+            <form action="<?= BASEURL ?>/peminjaman/form/" method='post'>
+                    <input type="hidden" name="ruangan" value="<?= $key['kode_ruang'] ?>" >
+                    <input type="hidden" name="nominal" value="<?= $key['tarif_ruang'] ?>" >
+
+                        <label class="label-form mb-2 fw-semibold " for="tanggal-mulai">Tanggal Pakai</label>
+                        <input  name="tanggal" class="form-control ctrl mb-3" type="date">
+                        <label for="waktu-mulai " class="mb-2 fw-semibold "   >waktu mulai</label>
+                        <input name="mulai" class="form-control ctrl mb-3" type="time">
+                        <label for="waktu-akhir " class="mb-2 fw-semibold " >waktu Akhir</label>
+                        
+                        <input name="akhir" class="form-control ctrl mb-2" type="time">
+            </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
