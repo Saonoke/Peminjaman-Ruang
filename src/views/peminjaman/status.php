@@ -1,8 +1,12 @@
 <div class="padding-top-400 container">
     <div class="table-wrapper">
     <div class="search-box">
-         <i class="bi bi-search" ></i>   
-        <input onkeyup="search()" id="searchitem" placeholder="cari" type="text">
+    <form action="<?= BASEURL ?>/peminjaman/search " method="post"  class="d-flex m-0" >
+           <input name="nama"  onkeyup="search()" id="searchitem" placeholder="cari" type="text">
+            <button type="submit" class="btn" ><i class="bi bi-search" ></i></button>
+
+       </form>
+
     </div>
 
     <table id="coba" class="table" > 

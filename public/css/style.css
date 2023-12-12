@@ -118,6 +118,20 @@ body {
 .padding-top-400 {
   padding-top: 100px;
 }
+.padding-left-400{
+  padding-left:200px;
+}
+
+.padding-left-800{
+  padding-left: 250px!important;
+}
+
+@media (max-width:50em){
+  .padding-left-400{
+    padding-left:0px;
+  }
+}
+
 
 .bg-blue{
   background: var(--primary-color)!important;
@@ -409,15 +423,18 @@ backdrop-filter: blur(5.3px);
 /* ruang detail */
 
 .image-modal{
-  width: 30%;
+  width: 50%;
 
 }
 
 .image-modal img{
   width: 100%;
 }
+/* .desc{
+  width: 100%;
+} */
 
-.desc input{
+.form input{
   background: rgba(255, 255, 255, 0.17);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

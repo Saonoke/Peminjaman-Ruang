@@ -21,9 +21,14 @@ body{
     background-color: #24244E!important;
 }
 
+.padding{
+    padding:0 1rem;
+}
+
 .aduh{
     display:none;
-    position: absolute;
+    position: fixed;
+    z-index:9999;
     width:200px;
     top:0;
     left:0;
@@ -139,11 +144,20 @@ table tbody tr:last-child td:last-child
     -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.25);
     -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.25);
     box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.25);
-   
+   z-index: 1!important;
 }
 
 
 
 .dt-row{
     margin-bottom:2rem!important;
+}
+
+
+.image-identitas{
+    width: 50%;
+}
+
+.image-identitas img{
+    width: 100%;
 }

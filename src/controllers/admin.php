@@ -72,4 +72,24 @@ class admin extends Controller
        
         $this->view('template/footer');
     }
+
+    function search($index=1){
+       
+        $data['penyewa']=$this->model('penyewa')->get_user_search($index,$_POST);
+        $data['jumlah']=$this->model('user_model')->get_user($cek=false);
+      
+        $data['total'] =  $data['jumlah'][2];
+        $data['index']=$index;
+        $this->view('template/header');
+        $this->view('admin/dashboard',$data);
+       
+        $this->view('template/footer');
+    }
+
+    function jadwal(){
+        $data['ruang']=$this->model('ruang_model')->get_kelas();
+        $this->view('template/header');
+        $this->view('admin/jadwal',$data);
+        $this->view('template/footer');
+    }
 }
