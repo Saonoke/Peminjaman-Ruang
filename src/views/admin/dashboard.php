@@ -13,7 +13,7 @@ if(!isset($_SESSION['username']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="<?= BASEURL ?>/css/admin.css?v=3">
+    <link rel="stylesheet" href="<?= BASEURL ?>/css/admin.css?v=6">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   
@@ -21,7 +21,7 @@ if(!isset($_SESSION['username']))
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap"
         rel="stylesheet">
-        <script src="https://kit.fontawesome.com/e6bc1ebaee.js" crossorigin="anonymous"></script>
+    
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
@@ -31,7 +31,7 @@ if(!isset($_SESSION['username']))
 <script src="https://code.jquery.com/jquery-3.7.0.js" ></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" ></script>
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js" ></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 
 <style>
     .pagination {
@@ -57,83 +57,45 @@ if(!isset($_SESSION['username']))
 
 </head>
 <body>
-    <!-- Custom -->
-<div class="bg-ungu vh-1000 aduh">
-  
-  <div class="min-vh-100 d-flex flex-column align-items-start justify-content-center ">
-     
-  <ul class="nav nav-pills flex-column">
-      <li class="nav-item">
-          <a href="#" class="nav-link  text-white active">
-          <i class="fs-5 bi bi-grid-1x2-fill me-2"></i><span class="fs-4 d-gone">Dashboard</span>
-          </a>
-      </li>
-      <li class="nav-item">
-          <a href="#" class="nav-link text-white"><i class="fs-5 bi bi-calendar3 me-2"></i><span class="fs-4 d-gone">Jadwal</span></a>
-      </li>
-      <li class="nav-item">
-          <a href="#" class="nav-link text-white"><i class="fs-5 bi bi-archive-fill me-2"></i><span class="fs-4 d-gone">Arsip</span></a>
-      </li>
 
-  </ul>
-  </div>
-</div>
 
-<!-- custom -->
-    <div class="container-fluid ">
-<div class="row flex-nowrap">
+
+<div id="tes"  class="padding">
+<div class="">
    
 
 
 
-    <div class="bg-ungu col-auto col-lg-2 vh-1000  d-md-flex d-none pt-3">
   
-        <div class="min-vh-100 d-flex flex-column align-items-start justify-content-start  ">
-           
-        <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-                <a href="#" class="nav-link  text-white active">
-                    <i class="fs-5 bi bi-grid-1x2-fill me-2"></i><span class="fs-4  d-gone">Dashboard</span>
-
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-white"><i class="fs-5 bi bi-calendar3 me-2"></i><span class="fs-4 d-gone">Jadwal</span></a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link text-white"><i class="fs-5 bi bi-archive-fill me-2"></i><span class="fs-4 d-gone">Arsip</span></a>
-            </li>
-
-        </ul>
-        </div>
-    </div>
-    <div class="col full-a">
-        <div class="top d-flex justify-content-between align-items-center mt-2 px-3">
-            <button type="button" class="btn btn-primary coba zindex hamburger" id="hamburger" ><i class="bi bi-list" ></i></button>
-        <h1 class="fw-bold" >Dashboard</h1>
+    <div class="">
+    <div class="top d-flex justify-content-between align-items-center mt-2 px-3">
+        <button type="button" class="btn btn-primary zindex hamburger" id="hamburger"><i
+                class=" bi bi-list"></i></button>
+        <h1 class="fw-bold">Dashboard</h1>
         <div class="btn-group">
-  <button type="button" class="btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-  <i class="fs-5 fa fa-user"></i>
-  </button>
-  <ul class="dropdown-menu dropdown-menu-lg-end">
-    
-    <form method="post" action="<?= BASEURL ?>/admin/logout">
-    <li>
-        <button class="dropdown-item" type="submit" name="logout">Log Out</button>
-    </li>
-</form>
+            <button type="button" class="btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown"
+                data-bs-display="static" aria-expanded="false">
+                <i class="fs-5 bi bi-gear-fill"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-lg-end">
 
-  </ul>
-</div>
+                <form method="post" action="<?= BASEURL ?>/admin/logout">
+                    <li>
+                        <button class="dropdown-item" type="submit" name="logout">Log Out</button>
+                    </li>
+                </form>
 
+            </ul>
         </div>
+
+    </div>
     <main class="mt-5 d-flex justify-content-between gap-5  flex-column"> 
 
     <div class="information flex-wrap d-flex gap-2">
   <a href="<?= BASEURL ?>/admin/request" class="text-decoration-none text-black" >
   <div class="card-total d-flex  justify-content-start gap-2 align-items-center">
             <div class="box-yellow" id="yellow"></div>
-            <h1><?= $jumlah_satu = implode(", ",$data['jumlah'][0])?></h1>
+            <h1><?= $jumlah_satu = implode(",    ",$data['jumlah'][0])?></h1>
             <h2>Request</h2>
         </div>
 
@@ -148,8 +110,13 @@ if(!isset($_SESSION['username']))
     </div>
   <div class="table-wrapper">
   <div class="search-box bg-white">
-         <i class="bi bi-search" ></i>   
-        <input onkeyup="search()" id="searchitem" placeholder="cari" type="text">
+       <form action="<?= BASEURL ?>/admin/search " method="post"  class="d-flex m-0" >
+           <input name="nama"  onkeyup="search()" id="searchitem" placeholder="cari" type="text">
+            <button type="submit" class="btn" ><i class="bi bi-search" ></i></button>
+
+       </form>
+
+   
     </div>
   <table id="coba" class="table " > 
             <thead>
@@ -228,11 +195,49 @@ if(!isset($_SESSION['username']))
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Detail Peminjaman</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <?= $key['nama'] ?>
+
+          <div class="d-flex justify-content-between px-5">
+    <div class="detail-peminjaman">
+        <h5 class="fw-semibold" >Nama :</h5>
+        <h5><?= $key['nama'] ?></h5>
+
+        <h5 class="fw-semibold" >No Identitas :</h5>
+        <h5><?= $key['identitas'] ?></h5>
+
+        <h5 class="fw-semibold" >No Telp :</h5>
+        
+        <h5><?= $key['nomer'] ?></h5>
+
+        <h5 class="fw-semibold" >Kategori :</h5>
+        <h5><?= $key['kategori'] ?></h5>
+        
+
+        <h5 class="fw-semibold" >deskripsi :</h5>
+        <h5><?= $key['deskripsi'] ?></h5>
+
+        <h5 class="fw-semibold" >Ruangan :</h5>
+        <h5><?= $key['ruangan'] ?></h5>
+
+        <h5 class="fw-semibold" >Tanggal Pinjam :</h5>
+        <h5><?= $key['tanggal'] ?></h5>
+
+        <h5 class="fw-semibold" >Jam :</h5>
+        <h5><?= $key['jam_mulai'] ?> - <?= $key['jam_akhir']  ?> </h5>
+
+     
+       
+        </div>
+                <div class="image-identitas">
+                    <img  src="<?= BASEURL ?>/upload/<?= $key['upload'] ?>" alt="">
+
+                </div>
+
+      </div>
+       
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -259,53 +264,31 @@ if(!isset($_SESSION['username']))
 <script>
     
     const button = document.getElementById('hamburger');
-    console.log(button);
+    const close= document.getElementById('close');
+    const pad= document.getElementById('tes');
+    
+    close.addEventListener('click',()=>{
+        const list = document.querySelector('.aduh');
+ pad.classList.remove("padding-left-800");
+  list.style.display = 'none';
+  button.style.display="block";
+
+    })
 
 button.addEventListener('click',()=>{
-  console.log('tes');
+
   const list = document.querySelector('.aduh');
-  
+  pad.classList.add("padding-left-800");
+  button.style.display="none";
   list.style.display = 'flex';
 })
+
+
+
       
 </script>    
 
-<script>
-    const search = () => {
-    const kosong =document.querySelector('.kosong');
-    kosong.style.display= 'none';
 
-    const searchbox= document.querySelector('#searchitem').value.toUpperCase();
-    const product = document.querySelectorAll('.cobacoba');
-    const pname=document.querySelectorAll('.namapeminjam');
-    let hitung=0;
-    for (let i = 0; i < pname.length; i++) {
-   
-      let match= product[i].querySelector('.namapeminjam');
-
-      if(match){
-        let textvalue=match.textContent || match.innerHTML;
-        if(textvalue.toUpperCase().indexOf(searchbox) > -1){
-          product[i].style.display= '';
-        }else{
-          product[i].style.display= 'none';
-            hitung++;
-        }
-      }
-      
-    }
-  
-    if(hitung==pname.length){
-    
-     kosong.style.display= 'block';
-     kosong.innerHTML="coba";
-    }
-
-
-
-  }
-
-</script>
 
 </body>
 </html>

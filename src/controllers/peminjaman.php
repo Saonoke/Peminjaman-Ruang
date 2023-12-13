@@ -53,9 +53,12 @@ class peminjaman extends Controller
     }
 
     function tambahPenyewa(){
-        $target_dir = "../public/upload/";
+      $cek = $this->model('penyewa')->insert_penyewa($_POST,$_FILES);
+    
+              $target_dir = "../public/upload/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
+        $filename=$_FILES["fileToUpload"]["name"];
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         // Check if image file is a actual image or fake image
         if(isset($_POST["submit"])) {
@@ -74,15 +77,29 @@ class peminjaman extends Controller
           // if everything is ok, try to upload file
           } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-             
+              $query = "update peminjaman set upload='".$filename."' where no_identitas='".$_POST['nim']."'";
+              
             } else {
               echo "Sorry, there was an error uploading your file.";
             }
           }
-        $cek = $this->model('penyewa')->insert_penyewa($_POST);
-        if($cek){
+        
+ if($cek){
           header('Location: http://localhost/peminjamanRuang/public/peminjaman/send');
-        }
+        } 
+    }
+
+    function search($index=1){
+
+      $data['penyewa']=$this->model('penyewa')->get_user_search($index,$_POST);
+      $data['jumlah']=$this->model('user_model')->get_user($cek=false);
+    
+      $data['total'] =  $data['jumlah'][2];
+      $data['index']=$index;
+      $this->view('template/header');
+      $this->view('template/navbar');
+      $this->view('peminjaman/status',$data);
+      $this->view('template/footer');
     }
 
   
