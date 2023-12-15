@@ -2,10 +2,11 @@
 
 class admin extends Controller
 {
-    function index()
+    function index($flash = false)
     {
+        $data['flash'] = $flash;
         $this->view('template/header');
-        $this->view('admin/login');
+        $this->view('admin/login', $data);
         $this->view('template/footer');
 
     }
@@ -58,7 +59,8 @@ class admin extends Controller
             header('Location: http://localhost/peminjamanRuang/public/admin/dashboard');
             exit();
         } else {
-            header('Location: http://localhost/peminjamanRuang/public/admin/index');
+            $this->index(true);
+
         }
     }
     function logout()
@@ -80,6 +82,17 @@ class admin extends Controller
             header('Location: http://localhost/peminjamanRuang/public/admin/dashboard');
         }
     }
+
+    function dec($id = 0)
+    {
+        $data['id'] = $id;
+
+        $cek = $this->model('penyewa')->dec_sewa($data);
+        if ($cek) {
+            header('Location: http://localhost/peminjamanRuang/public/admin/dashboard');
+        }
+    }
+
 
     function request($index = 1)
     {

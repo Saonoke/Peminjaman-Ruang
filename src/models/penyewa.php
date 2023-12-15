@@ -13,7 +13,7 @@ class penyewa
 
     $start_from = ($page - 1) * 20;
 
-    $sql = "select pm.id_peminjaman as id,pm.no_identitas as identitas,pe.nama_peminjaman as nama,(select k.kategori from kategori_penyewa k where k.id=pe.kategori) as kategori,pm.deskripsi_pinjam as deskripsi,r.nama_ruangan as ruangan,pm.tanggal_pinjam as tanggal,pm.jam_awal as jam_mulai,pm.jam_akhir as jam_akhir,pm.is_acc as status,pm.upload as upload,pe.no_telp as nomer
+    $sql = "select pm.id_peminjaman as id,pm.no_identitas as identitas,pe.nama_peminjaman as nama,(select k.kategori from kategori_penyewa k where k.id=pe.kategori) as kategori,pm.deskripsi_pinjam as deskripsi,r.nama_ruangan as ruangan,pm.tanggal_pinjam as tanggal,pm.jam_awal as jam_mulai,pm.jam_akhir as jam_akhir,pm.is_acc as status,pm.upload as upload,pe.no_telp as nomer,is_decline as decline
         from peminjaman pm
         join peminjam pe on pe.no_identitas=pm.no_identitas
         join ruang r on r.kode_ruang=pm.kode_ruang where is_arsip='0' limit " . $start_from . ",20;";
@@ -55,7 +55,7 @@ class penyewa
       $result = $conn->query($sql3);
       $row = $result->fetch_assoc();
 
-      $sql1 = "insert into peminjaman values ('','" . $_POST['nim'] . "','" . $_POST['ruangan'] . "','adm2',CURDATE(),'" . $_POST['tanggal'] . "','" . $_POST['mulai'] . "' ,'" . $_POST['akhir'] . "','" . $_POST['deskripsi'] . "','0','" . $row['id_pembayaran'] . "','0','" . $_FILES["fileToUpload"]["name"] . "');";
+      $sql1 = "insert into peminjaman values ('','" . $_POST['nim'] . "','" . $_POST['ruangan'] . "','adm2',CURDATE(),'" . $_POST['tanggal'] . "','" . $_POST['mulai'] . "' ,'" . $_POST['akhir'] . "','" . $_POST['deskripsi'] . "','0','" . $row['id_pembayaran'] . "','0','" . $_FILES["fileToUpload"]["name"] . "','0');";
 
       if ($conn->query($sql1) === TRUE) {
         return true;
@@ -96,6 +96,18 @@ class penyewa
     }
   }
 
+  public function dec_sewa($tes = [])
+  {
+    include('auth.php');
+    $sql = "update peminjaman set is_decline=1 where id_peminjaman = '" . $tes['id'] . "';";
+    if ($conn->query($sql) === TRUE) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
   public function get_request($index = 1)
   {
     include('auth.php');
@@ -107,16 +119,39 @@ class penyewa
 
     $start_from = ($page - 1) * 20;
 
-    $sql = "select  pm.id_peminjaman as id,pm.no_identitas as identitas,pe.nama_peminjaman as nama,(select k.kategori from kategori_penyewa k where k.id=pe.kategori) as kategori,pm.deskripsi_pinjam as deskripsi,r.nama_ruangan as ruangan,pm.tanggal_pinjam as tanggal,pm.jam_awal as jam_mulai,pm.jam_akhir as jam_akhir,pm.is_acc as status,pm.upload as upload,pe.no_telp as nomer
+    $sql = "select  pm.id_peminjaman as id,pm.no_identitas as identitas,pe.nama_peminjaman as nama,(select k.kategori from kategori_penyewa k where k.id=pe.kategori) as kategori,pm.deskripsi_pinjam as deskripsi,r.nama_ruangan as ruangan,pm.tanggal_pinjam as tanggal,pm.jam_awal as jam_mulai,pm.jam_akhir as jam_akhir,pm.is_acc as status,pm.upload as upload,pe.no_telp as nomer,is_decline as decline
         from peminjaman pm
         join peminjam pe on pe.no_identitas=pm.no_identitas
-        join ruang r on r.kode_ruang=pm.kode_ruang where is_acc='0' limit " . $start_from . ",20;";
+        join ruang r on r.kode_ruang=pm.kode_ruang where pm.is_acc='0' and pm.is_decline='0'  limit " . $start_from . ",20;";
 
     $result = $conn->query($sql);
 
 
     return mysqli_fetch_all($result, MYSQLI_ASSOC);
   }
+  public function get_status($index = 1)
+  {
+    include('auth.php');
+    if ($index > 1) {
+      $page = $index;
+    } else {
+      $page = 1;
+    }
+
+    $start_from = ($page - 1) * 20;
+
+    $sql = "select  pm.id_peminjaman as id,pm.no_identitas as identitas,pe.nama_peminjaman as nama,(select k.kategori from kategori_penyewa k where k.id=pe.kategori) as kategori,pm.deskripsi_pinjam as deskripsi,r.nama_ruangan as ruangan,pm.tanggal_pinjam as tanggal,pm.jam_awal as jam_mulai,pm.jam_akhir as jam_akhir,pm.is_acc as status,pm.upload as upload,pe.no_telp as nomer,is_decline as decline
+        from peminjaman pm
+        join peminjam pe on pe.no_identitas=pm.no_identitas
+        join ruang r on r.kode_ruang=pm.kode_ruang where pe.nama_peminjaman!= 'diah' limit " . $start_from . ",20;";
+
+    $result = $conn->query($sql);
+
+
+    return mysqli_fetch_all($result, MYSQLI_ASSOC);
+  }
+
+
 
   public function get_user_search($index = 1)
   {
@@ -129,7 +164,7 @@ class penyewa
 
     $start_from = ($page - 1) * 20;
 
-    $sql = "select pm.id_peminjaman as id,pm.no_identitas as identitas,pe.nama_peminjaman as nama,(select k.kategori from kategori_penyewa k where k.id=pe.kategori) as kategori,pm.deskripsi_pinjam as deskripsi,r.nama_ruangan as ruangan,pm.tanggal_pinjam as tanggal,pm.jam_awal as jam_mulai,pm.jam_akhir as jam_akhir,pm.is_acc as status,pm.upload as upload
+    $sql = "select pm.id_peminjaman as id,pm.no_identitas as identitas,pe.nama_peminjaman as nama,(select k.kategori from kategori_penyewa k where k.id=pe.kategori) as kategori,pm.deskripsi_pinjam as deskripsi,r.nama_ruangan as ruangan,pm.tanggal_pinjam as tanggal,pm.jam_awal as jam_mulai,pm.jam_akhir as jam_akhir,pm.is_acc as status,pm.upload as upload,pe.no_telp as nomer,is_decline as decline
         from peminjaman pm
         join peminjam pe on pe.no_identitas=pm.no_identitas
         join ruang r on r.kode_ruang=pm.kode_ruang where pe.nama_peminjaman like '" . $_POST['nama'] . "%' limit " . $start_from . ",20;";
@@ -150,7 +185,7 @@ class penyewa
 
     $start_from = ($page - 1) * 20;
 
-    $sql = "select pm.id_peminjaman as id,pm.no_identitas as identitas,pe.nama_peminjaman as nama,(select k.kategori from kategori_penyewa k where k.id=pe.kategori) as kategori,pm.deskripsi_pinjam as deskripsi,r.nama_ruangan as ruangan,pm.tanggal_pinjam as tanggal,pm.jam_awal as jam_mulai,pm.jam_akhir as jam_akhir,pm.is_acc as status,pm.upload as upload
+    $sql = "select pm.id_peminjaman as id,pm.no_identitas as identitas,pe.nama_peminjaman as nama,(select k.kategori from kategori_penyewa k where k.id=pe.kategori) as kategori,pm.deskripsi_pinjam as deskripsi,r.nama_ruangan as ruangan,pm.tanggal_pinjam as tanggal,pm.jam_awal as jam_mulai,pm.jam_akhir as jam_akhir,pm.is_acc as status,pm.upload as upload,pe.no_telp as nomer,is_decline as decline
         from peminjaman pm
         join peminjam pe on pe.no_identitas=pm.no_identitas
         join ruang r on r.kode_ruang=pm.kode_ruang where pe.nama_peminjaman like '" . $_POST['nama'] . "%' AND pm.is_arsip='1' limit " . $start_from . ",20;";

@@ -3,8 +3,10 @@
 class user_model
 {
 
+
     public function get_user($coba = true)
     {
+
 
         include('auth.php');
         $sql = "select count(id_peminjaman) as jumlah from peminjaman where is_acc='0'";

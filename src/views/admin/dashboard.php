@@ -148,7 +148,20 @@ if(!isset($_SESSION['username']))
                         <td><?= $key['deskripsi'] ?></td>
                         <td><?= $key['ruangan'] ?></td>
                         <td><?= $key['tanggal'] ?></td>
-                        <td style="<?= ($key['status']>0)?'color:#248749':'color:#FFA921'; ?>"><?= ($key['status']>0)?'Accepted':'Waiting' ?></td>
+                        <?php
+                            if($key['decline'] == '1'){
+
+                            
+                        ?>
+                        <td class="text-danger">Decline</td>
+                        <?php
+                            }else{
+                                ?>
+                                <td style="<?= ($key['status']>0)?'color:#248749':'color:#FFA921'; ?>"><?= ($key['status']>0)?'Accepted':'Waiting' ?></td>
+
+                            <?php
+                            }
+                        ?>
                         <td>
                             <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="<?= '#exampleModal'.$key['id'] ?>">Details</button>
                             
@@ -241,7 +254,7 @@ if(!isset($_SESSION['username']))
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a href='<?= BASEURL ?>/admin/acc/<?= $key['id'] ?>' type="button" class="btn btn-danger">Decline</a>
+        <a href='<?= BASEURL ?>/admin/dec/<?= $key['id'] ?>' type="button" class="btn btn-danger">Decline</a>
         <a href='<?= BASEURL ?>/admin/acc/<?= $key['id'] ?>' type="button" class="btn btn-success">Accept</a>
       </div>
     </div>
