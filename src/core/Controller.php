@@ -7,9 +7,11 @@ class Controller
         require '../src/views/' . $view . '.php';
     }
 
-    public function model($model){
-       
-        require '../src/models/'. $model .'.php';
+    public function model($model)
+    {
+
+        require '../src/models/' . $model . '.php';
+
         return new $model;
     }
 }

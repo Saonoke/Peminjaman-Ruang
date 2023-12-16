@@ -38,7 +38,8 @@ class peminjaman extends Controller
   }
   public function ruang()
   {
-    $data['ruang'] = $this->model('ruang_model')->get_kelas();
+    $data['ruang'] = $this->model('ruang_model')->get_ruang();
+
 
     $this->view('template/header');
     $this->view('template/navbar');

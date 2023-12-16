@@ -95,7 +95,7 @@ if(!isset($_SESSION['username']))
   <a href="<?= BASEURL ?>/admin/request" class="text-decoration-none text-black" >
   <div class="card-total d-flex  justify-content-start gap-2 align-items-center">
             <div class="box-yellow" id="yellow"></div>
-            <h1><?= $jumlah_satu = implode(",    ",$data['jumlah'][0])?></h1>
+            <h1><?= $jumlah_satu = $data['jumlah'][0]?></h1>
             <h2>Request</h2>
         </div>
 
@@ -103,7 +103,7 @@ if(!isset($_SESSION['username']))
    <a href="<?= BASEURL ?>/admin/dashboard" class="text-decoration-none text-black" >
         <div class="card-total d-flex justify-content-start gap-2 align-items-center">
             <div class="box-green" id="yellow"></div>
-            <h1><?= $jumlah_satu = implode(", ",$data['jumlah'][1]); ?></h1>
+            <h1><?= $jumlah_satu = $data['jumlah'][1]; ?></h1>
             <h2>Accepted</h2>
         </div>
         </a>
@@ -178,7 +178,7 @@ if(!isset($_SESSION['username']))
 
 <div class="paging d-flex justify-content-end">
     <?php 
-        $total = intval($data['total']['jumlah']);
+        $total = $data['total'];
         $total_pages = ceil($total / 20);
     
         $batas = $data['index'] + 4;

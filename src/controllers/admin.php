@@ -11,14 +11,19 @@ class admin extends Controller
 
     }
 
+
+
     function dashboard($index = 1)
     {
 
-        $data['jumlah'] = $this->model('user_model')->get_user();
+        $coba = $this->model('user_model');
+
+        $data['jumlah'] = $coba->get_user();
+
+
         $data['total'] = $data['jumlah'][1];
         $data['index'] = $index;
         $data['penyewa'] = $this->model('penyewa')->get_penyewa($data['index']);
-
 
 
 
@@ -38,6 +43,7 @@ class admin extends Controller
         $data['total'] = $data['jumlah'];
         $data['index'] = $index;
         $data['penyewa'] = $this->model('history')->get_history($data['index']);
+
 
         $this->view('template/header');
         $this->view('template/sidebar');
@@ -142,7 +148,7 @@ class admin extends Controller
 
     function jadwal()
     {
-        $data['ruang'] = $this->model('ruang_model')->get_kelas();
+        $data['ruang'] = $this->model('ruang_model')->get_ruang();
         $this->view('template/header');
         $this->view('template/sidebar');
         $this->view('admin/jadwal', $data);
@@ -151,7 +157,7 @@ class admin extends Controller
 
     function searchjadwal()
     {
-        $data['ruang'] = $this->model('ruang_model')->get_kelas();
+        $data['ruang'] = $this->model('ruang_model')->get_ruang();
         $data['check'] = $this->model('penyewa')->cek_ruang($_POST);
         $data['post'] = $_POST;
         $this->view('template/header');
@@ -159,5 +165,11 @@ class admin extends Controller
         $this->view('admin/jadwal', $data);
         $this->view('template/footer');
 
+    }
+
+    function coba()
+    {
+        $data['peminjaman'] = $this->model('coba')->get_peminjaman();
+        echo var_dump($data['peminjaman']);
     }
 }
