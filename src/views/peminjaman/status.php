@@ -126,7 +126,7 @@
 
         <div class="paging d-flex justify-content-end">
             <?php
-            $total = intval($data['total']['jumlah']);
+            $total = $data['total'];
             $total_pages = ceil($total / 20);
 
             $batas = $data['index'] + 4;

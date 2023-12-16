@@ -52,7 +52,7 @@
             <div class="card-total d-flex justify-content-start gap-2 align-items-center">
                 <div class="box-biru" id="yellow"></div>
                 <h1>
-                    <?= $jumlah_satu = implode(", ", $data['jumlah']); ?>
+                    <?= $jumlah_satu = $data['jumlah']; ?>
                 </h1>
                 <h2>Archived</h2>
             </div>
@@ -129,7 +129,7 @@
         </table>
         <div class="paging d-flex justify-content-end">
             <?php
-            $total = intval($data['total']['jumlah']);
+            $total = $data['total'];
             $total_pages = ceil($total / 20);
 
             $batas = $data['index'] + 4;
