@@ -82,9 +82,8 @@
                     <div class="gradient">
                     </div>
                     <h1 class="fw-semibold">Lantai 5</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus facere quis quibusdam esse
-                        cum?
-                        Facilis.</p>
+                    <p>Pilihan Ruangan dan Kelas Dari Jurusan Teknologi Informasi di Lantai 5
+                        yang dapat digunakan untuk berbagai tujuan.</p>
                 </div>
             </div>
         </a>
@@ -96,9 +95,8 @@
                     <div class="gradient">
                     </div>
                     <h1 class="fw-semibold">Lantai 6 </h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus facere quis quibusdam esse
-                        cum?
-                        Facilis.</p>
+                    <p>Pilihan Ruangan dan Kelas Dari Jurusan Teknologi Informasi di Lantai 6
+                        yang dapat digunakan untuk berbagai tujuan.</p>
                 </div>
             </div>
         </a>
@@ -109,9 +107,8 @@
                     <div class="gradient">
                     </div>
                     <h1 class="fw-semibold">Lantai 7 </h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus facere quis quibusdam esse
-                        cum?
-                        Facilis.</p>
+                    <p>Pilihan Ruangan dan Kelas Dari Jurusan Teknologi Informasi di Lantai 7
+                        yang dapat digunakan untuk berbagai tujuan.</p>
                 </div>
             </div>
 
@@ -176,9 +173,9 @@
 <section id="about" class="my-5">
     <div class="container">
         <h1 class="fw-semibold size70">SISPEMRU</h1>
-        <P>Sistem Peminjaman Ruang Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a type specimen book. </P>
+        <P>Sistem Peminjaman Ruang Jurusan Teknologi Informasi Dibuat Untuk Memfasilitasi Seluruh Pihak
+            Yang Ingin Meminjam Ruangan Di JTI Agar Lebih Mudah Dan Cepat Dengan Sistem
+            Real-Time Sesuai Jadwal Yang Tersedia.</P>
     </div>
 </section>
 
