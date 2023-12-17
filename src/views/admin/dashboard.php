@@ -95,7 +95,7 @@ if(!isset($_SESSION['username']))
   <a href="<?= BASEURL ?>/admin/request" class="text-decoration-none text-black" >
   <div class="card-total d-flex  justify-content-start gap-2 align-items-center">
             <div class="box-yellow" id="yellow"></div>
-            <h1><?= $jumlah_satu = implode(",    ",$data['jumlah'][0])?></h1>
+            <h1><?= $jumlah_satu = $data['jumlah'][0]?></h1>
             <h2>Request</h2>
         </div>
 
@@ -103,7 +103,7 @@ if(!isset($_SESSION['username']))
    <a href="<?= BASEURL ?>/admin/dashboard" class="text-decoration-none text-black" >
         <div class="card-total d-flex justify-content-start gap-2 align-items-center">
             <div class="box-green" id="yellow"></div>
-            <h1><?= $jumlah_satu = implode(", ",$data['jumlah'][1]); ?></h1>
+            <h1><?= $jumlah_satu = $data['jumlah'][1]; ?></h1>
             <h2>Accepted</h2>
         </div>
         </a>
@@ -148,7 +148,20 @@ if(!isset($_SESSION['username']))
                         <td><?= $key['deskripsi'] ?></td>
                         <td><?= $key['ruangan'] ?></td>
                         <td><?= $key['tanggal'] ?></td>
-                        <td style="<?= ($key['status']>0)?'color:#248749':'color:#FFA921'; ?>"><?= ($key['status']>0)?'Accepted':'Waiting' ?></td>
+                        <?php
+                            if($key['decline'] == '1'){
+
+                            
+                        ?>
+                        <td class="text-danger">Decline</td>
+                        <?php
+                            }else{
+                                ?>
+                                <td style="<?= ($key['status']>0)?'color:#248749':'color:#FFA921'; ?>"><?= ($key['status']>0)?'Accepted':'Waiting' ?></td>
+
+                            <?php
+                            }
+                        ?>
                         <td>
                             <button class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="<?= '#exampleModal'.$key['id'] ?>">Details</button>
                             
@@ -165,7 +178,7 @@ if(!isset($_SESSION['username']))
 
 <div class="paging d-flex justify-content-end">
     <?php 
-        $total = intval($data['total']['jumlah']);
+        $total = $data['total'];
         $total_pages = ceil($total / 20);
     
         $batas = $data['index'] + 4;
@@ -241,7 +254,7 @@ if(!isset($_SESSION['username']))
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a href='<?= BASEURL ?>/admin/acc/<?= $key['id'] ?>' type="button" class="btn btn-danger">Decline</a>
+        <a href='<?= BASEURL ?>/admin/dec/<?= $key['id'] ?>' type="button" class="btn btn-danger">Decline</a>
         <a href='<?= BASEURL ?>/admin/acc/<?= $key['id'] ?>' type="button" class="btn btn-success">Accept</a>
       </div>
     </div>

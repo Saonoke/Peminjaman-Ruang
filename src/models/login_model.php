@@ -1,18 +1,33 @@
 <?php
-class login_model{
+class login_model
+{
 
-    public function login($data){
-        include ('auth.php');
+    private $db;
 
-        $sql = "select username,password from admin where username='".$data['username']."'";
-                $result = $conn->query($sql);
-                $row = $result->fetch_assoc();
-                $password=md5($data['password']);
-                if($password == $row['password']){
-                    return true;
-                }
-                
-                return false;
+    public function __construct()
+    {
+        $this->db = new database;
+    }
+
+    public function login($data)
+    {
+
+
+        $sql = "select username,password from admin where username='" . $data['username'] . "'";
+        $this->db->query($sql);
+        $result = $this->db->resultSet();
+
+        if (isset($result)) {
+            $password = md5($data['password']);
+            if ($password == $result[0]['password']) {
+                return true;
+            }
+
+            return false;
+        } else {
+            return false;
+        }
+
     }
 }
 

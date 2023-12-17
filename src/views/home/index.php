@@ -128,11 +128,11 @@
     <a href="#" class="mt-5 btn py-2 btn-primary btn-bd-primary">Pinjam Sekarang !</a>
 </div>
 
-<section id="spec" class="d-flex width-100 flex-wrap">
+<section id="spec" class="d-flex width-100  flex-wrap">
     <div class="bg-sec width-70">
         <div class="d-flex justify-content-center ">
             <div class="container px-5 p-5">
-                <div class="d-flex justify-content-around align-items-center ">
+                <div class="d-flex justify-content-around gap-3 align-items-center ">
                     <div class="left">
                         <div class="mb-5">
                             <img class="icon" src="<?= BASEURL ?>/image/time.png" alt="">
@@ -167,7 +167,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-image width-50 ">
+    <div class="bg-image width-50  d-none d-md-none d-lg-block ">
         <img class="rotate " src="<?= BASEURL ?>/image/wave.svg" alt="">
     </div>
 </section>

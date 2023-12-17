@@ -6,10 +6,8 @@
 
 .rectangle {
   background-image: url("../image/Grapol.jpg");
-
   justify-content: center;
   align-items: center;
-
   text-align: center;
   width: 100%;
   height: 100vh;
@@ -23,6 +21,7 @@
 .btn-primary {
   --bs-btn-bg: var(--secondary-color) !important;
   --bs-btn-hover-bg: #ffbc3b !important;
+  --bs-btn-active-bg: #ffbc3b !important;
 }
 
 .btn {
@@ -222,10 +221,10 @@ body {
 }
 
 .kotak {
-  width: 350px;
+  width: 400px;
   /* height: 600px; */
+  height: 600px;
 
-  max-height: 600px;
   padding: 2rem;
 
   position: absolute;
@@ -296,12 +295,18 @@ form a:hover {
   right: 0;
   width: 70%;
 }
-.width-100 {
-  width: 100%;
-}
+
 .width-50 {
   width: 30%;
   position: relative;
+  top: 0;
+  right: 0;
+}
+
+@media (max-width: 990px) {
+  .width-70 {
+    width: 100%;
+  }
 }
 
 .bg-image {
@@ -322,12 +327,18 @@ form a:hover {
   top: 0;
   left: 0;
 }
+
+@media (max-width: 1500) {
+  .rotate {
+    min-width: 120%;
+    height: auto;
+  }
+}
 .width-10 {
   width: 10%;
   position: relative;
 }
-.container {
-}
+
 /* end spec */
 
 /* ruangan */

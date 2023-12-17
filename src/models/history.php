@@ -2,12 +2,23 @@
 
 class history
 {
+
+    private $db;
+
+
+    public function __construct()
+    {
+        $this->db = new database;
+    }
     public function get_history($index = 1)
     {
-        include('auth.php');
+
 
         $sql = "update peminjaman set is_arsip= '1' where tanggal_pinjam<curdate()";
-        if ($conn->query($sql) === TRUE) {
+        $this->db->query($sql);
+        $this->db->execute();
+
+        if ($this->db->rowCount() >= 0) {
 
             if ($index > 1) {
                 $page = $index;
@@ -21,10 +32,10 @@ class history
           from peminjaman pm
           join peminjam pe on pe.no_identitas=pm.no_identitas
           join ruang r on r.kode_ruang=pm.kode_ruang where is_arsip = '1'  limit   " . $start_from . ",20;";
-            $result = $conn->query($sql);
+            $this->db->query($sql);
 
 
-            return mysqli_fetch_all($result, MYSQLI_ASSOC);
+            return $this->db->resultSet();
         }
     }
 }
