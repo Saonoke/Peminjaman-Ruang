@@ -22,4 +22,12 @@ class ruang_model
 
         return $this->db->resultSet();
     }
+
+    public function cek_jadwal()
+    {
+        $sql = "SELECT count(r.nama_ruangan) as jumlah from peminjaman p inner join ruang r on r.kode_ruang = p.kode_ruang where p.jam_awal >= '" . $_POST['mulai'] . "' and p.jam_akhir <= '" . $_POST['akhir'] . "' and p.tanggal_pinjam ='" . $_POST['tanggal'] . "' and p.kode_ruang ='" . $_POST['ruangan'] . "';";
+        $this->db->query($sql);
+        return $this->db->resultSet();
+
+    }
 }
