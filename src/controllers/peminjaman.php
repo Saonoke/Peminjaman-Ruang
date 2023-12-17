@@ -36,8 +36,14 @@ class peminjaman extends Controller
     $this->view('template/footer');
 
   }
-  public function ruang()
+
+  public function print()
   {
+    $this->view('peminjaman/form_izin');
+  }
+  public function ruang($coba = '0')
+  {
+    $data['checking'] = $coba;
     $data['ruang'] = $this->model('ruang_model')->get_ruang();
 
 
@@ -48,13 +54,24 @@ class peminjaman extends Controller
 
   }
 
-  public function form()
+  public function form($data)
   {
 
     $this->view('template/header');
     $this->view('template/navbar');
-    $this->view('peminjaman/form', $_POST);
+    $this->view('peminjaman/form', $data);
     $this->view('template/footer');
+  }
+
+  public function cek()
+  {
+    $cek = $this->model('ruang_model')->cek_jadwal($_POST);
+    if ($cek[0]['jumlah'] == 0) {
+      $this->form($_POST);
+    } else {
+      header('Location: http://localhost/peminjamanRuang/public/peminjaman/ruang/error');
+    }
+    ;
   }
 
   function tambahPenyewa()

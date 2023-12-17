@@ -10,21 +10,35 @@
                     <option>4</option>
                     <option>5</option>
                 </select> -->
-      <input type="text" name="" class="form-control ctrl" onkeyup="search()" id="searchitem">
+      <input type="text" name="" placeholder="cari" class="form-control ctrl" onkeyup="search()" id="searchitem">
     </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Lantai</label>
-      <select class="form-control ctrl" id="exampleFormControlSelect1">
-        <option selected> Pilih Lantai </option>
-        <option>Lantai 5</option>
-        <option>Lantai 6</option>
-        <option>Lantai 7</option>
-        <option>Lantai 8</option>
-      </select>
-    </div>
-    <button type="button" class="btn btn-primary search px-5">Search</button>
+
+
+
   </div>
-  <div class="kosong"></div>
+  <?php
+  if ($data['checking'] == 'error') {
+    ?>
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading">Permintaan Ditolak</h4>
+      <p>Jadwal Yang diminta telah dipinjam, silahkan lakukan pengecekan jadwal untuk melihat jadwal yang kosong atau
+        lakukan peminjaman di lain waktu.</p>
+      <hr>
+      <p>TERIMA KASIH!!</p>
+    </div>
+    <?php
+  }
+  ?>
+
+  <div class="container m-0">
+    <h1 class="jumlah fw-semibold  ">
+      <?= count($data['ruang']) ?> result
+    </h1>
+  </div>
+
+
+  <h1 class="kosong"></h1>
+
   <?php
   foreach ($data['ruang'] as $key) {
     ?>
@@ -32,6 +46,7 @@
     <!-- <div class="item">
   <div class="block"></div>
 </div> -->
+
     <button href="#coba" class="rouded-3 btn-sendiri coba " data-bs-toggle="modal"
       data-bs-target="<?= '#exampleModal' . $key['kode_ruang'] ?>">
       <div class="kartu kartu-ruangan rounded-3">
@@ -58,7 +73,7 @@
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title" id="exampleModalLabel">
+            <h1 class="modal-title fw-semibold" id="exampleModalLabel">
               <?= $key['nama_ruangan'] ?>
             </h1>
 
@@ -72,14 +87,17 @@
               <div class="desc">
                 <h5 class="fw-semibold">Kapasitas : </h5>
                 <p>
-                  <?= $key['kapasitas'] ?>
+                  <i class="fs-5 bi bi-people-fill"></i>
+                  <?= $key['kapasitas'] ?> person
                 </p>
                 <h5 class="fw-semibold">tarif ruang :</h5>
                 <p>
+                  <i class="fs-5 bi bi-currency-dollar"></i>
                   <?= $key['tarif_ruang'] ?>
                 </p>
                 <h5 class="fw-semibold">Fasilitas : </h5>
                 <p>
+                  <i class="fs-5 bi bi-collection-fill"></i>
                   <?= $key['fasilitas'] ?>
                 </p>
 
@@ -90,23 +108,32 @@
 
             </div>
             <div class="form  py-4 px-5 ">
-              <form action="<?= BASEURL ?>/peminjaman/form/" method='post'>
+              <form action="<?= BASEURL ?>/peminjaman/cek" method='post'>
                 <input required type="hidden" name="ruangan" value="<?= $key['kode_ruang'] ?>">
                 <input required type="hidden" name="nominal" value="<?= $key['tarif_ruang'] ?>">
 
                 <label class="label-form mb-2 fw-semibold " for="tanggal-mulai">Tanggal Pakai</label>
                 <input required name="tanggal" class="form-control ctrl mb-3" type="date">
-                <label for="waktu-mulai " class="mb-2 fw-semibold ">waktu mulai</label>
-                <input required name="mulai" class="form-control ctrl mb-3" type="time">
-                <label for="waktu-akhir " class="mb-2 fw-semibold ">waktu Akhir</label>
 
-                <input name="akhir" class="form-control ctrl mb-2" type="time">
+                <div class="d-flex width-100 gap-3">
+                  <div class="group flex-fill">
+                    <label for="waktu-mulai " class="mb-2 fw-semibold ">waktu mulai</label>
+                    <input required name="mulai" class="form-control ctrl mb-3" type="time">
+                  </div>
+                  <div class="group flex-fill">
+
+                    <label for="waktu-akhir " class="mb-2 fw-semibold ">waktu Akhir</label>
+
+                    <input name="akhir" class="form-control ctrl mb-2" type="time">
+                  </div>
+
+                </div>
+
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button href="<?= BASEURL ?>/peminjaman/form/<?= $key['kode_ruang'] ?>/<?= $key['tarif_ruang'] ?>"
-              type="submit" class="btn btn-primary">Pinjam!</button>
+            <button type="submit" class="btn btn-primary">Pinjam!</button>
           </div>
           </form>
         </div>
@@ -126,6 +153,7 @@
     const product = document.querySelectorAll('.btn-sendiri');
     const pname = document.querySelectorAll('.nama-ruangan');
     let hitung = 0;
+    let coba = 0;
     for (let i = 0; i < pname.length; i++) {
       let match = product[i].querySelector('.nama-ruangan');
 
@@ -133,18 +161,23 @@
         let textvalue = match.textContent || match.innerHTML;
         if (textvalue.toUpperCase().indexOf(searchbox) > -1) {
           product[i].style.display = '';
+          coba++;
         } else {
           product[i].style.display = 'none';
           hitung++;
+
         }
       }
 
     }
 
+    const jumlah = document.querySelector('.jumlah');
+    jumlah.innerHTML = coba + ' result';
+
     if (hitung == pname.length) {
 
       kosong.style.display = 'block';
-      kosong.innerHTML = "coba";
+      kosong.innerHTML = "Tidak Ditemukan";
     }
 
 

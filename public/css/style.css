@@ -125,6 +125,10 @@ body {
   padding-left: 250px !important;
 }
 
+.index-999 {
+  z-index: 99999 !important;
+}
+
 @media (max-width: 50em) {
   .padding-left-400 {
     padding-left: 0px;

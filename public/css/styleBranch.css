@@ -1,72 +1,76 @@
-.pencarian{
-    background-color: #ffaa22;
-    border-radius: 10px;
-    padding: 25px;
+.pencarian {
+  background-color: #ffaa22;
+  border-radius: 10px;
+  padding: 25px;
 }
 
-.form-group label{
-    font-weight: bold;
-    font-size: 20px;
-    color: white;
+.form-group label {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
 }
 
-.ctrl{
-    height: 40px!important;
-    color: #ffaa22!important;
-   background-color: #fff!important;
+.ctrl {
+  height: 40px !important;
+  color: #ffaa22 !important;
+  background-color: #fff !important;
 }
 
-.search{
-    height: 40px;
-    background-color: white !important;
-    color: #ffaa22 !important;
+.ctrl::placeholder {
+  color: #ffaa22 !important;
 }
 
-.search:hover{
-    background-color: #ffaa22 !important;
-    color: white !important;
-    border: 2px solid white !important;
+.search {
+  height: 40px;
+  background-color: white !important;
+  color: #ffaa22 !important;
 }
 
-.hari{
-    list-style: none;
-    text-align: center;
+.search:hover {
+  background-color: #ffaa22 !important;
+  color: white !important;
+  border: 2px solid white !important;
 }
 
-select{
-    cursor: pointer;
+.hari {
+  list-style: none;
+  text-align: center;
 }
 
-.list-hari{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    color: #24244f;
-}
-.jadwal{
-    width: 115px;
-    background-color: #ffaa22;
-    border-radius: 10px;
-}
-.day{
-    background-color: #ffaa22;
-}
-.night{
-    background-color: #24244f;
-    color: white;
-}
-.full{
-    color: red !important;
-}
-.kelas{
-    margin-right: 6rem;
-}
-.avail{
-    color: green;
+select {
+  cursor: pointer;
 }
 
-.flex{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.list-hari {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  color: #24244f;
+}
+.jadwal {
+  width: 115px;
+  background-color: #ffaa22;
+  border-radius: 10px;
+}
+.day {
+  background-color: #ffaa22;
+}
+.night {
+  background-color: #24244f;
+  color: white;
+}
+.full {
+  color: red !important;
+}
+.kelas {
+  margin-right: 6rem;
+}
+.avail {
+  color: green;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

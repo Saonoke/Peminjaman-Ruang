@@ -1,9 +1,14 @@
 <link rel="stylesheet" href="<?= BASEURL ?>/css/admin.css?v=6">
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header('Location: http://localhost/peminjamanRuang/public/admin/index');
+}
+?>
 
 
 
-
-<div id="tes" class="padding">
+<div id="tes" class="padding mx-5">
     <div class="top d-flex justify-content-between align-items-center mt-2 px-3">
         <button type="button" class="btn btn-primary zindex hamburger" id="hamburger"><i
                 class=" bi bi-list"></i></button>

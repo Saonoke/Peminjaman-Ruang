@@ -19,6 +19,7 @@ class admin extends Controller
         $coba = $this->model('user_model');
 
         $data['jumlah'] = $coba->get_user();
+        $data['link'] = 1;
 
 
         $data['total'] = $data['jumlah'][1];
@@ -29,24 +30,25 @@ class admin extends Controller
 
 
         $this->view('template/header');
-        $this->view('template/sidebar');
+        $this->view('template/sidebar', $data);
         $this->view('admin/dashboard', $data);
 
         $this->view('template/footer');
     }
 
-    function arsip($index = 1)
+    function arsip($index = 1, $id = 0)
     {
 
+        $data['check'] = $id;
         $data['jumlah'] = $this->model('user_model')->get_user_arsip();
-
+        $data['link'] = 3;
         $data['total'] = $data['jumlah'];
         $data['index'] = $index;
         $data['penyewa'] = $this->model('history')->get_history($data['index']);
 
 
         $this->view('template/header');
-        $this->view('template/sidebar');
+        $this->view('template/sidebar', $data);
         $this->view('admin/arsip', $data);
 
         $this->view('template/footer');
@@ -106,9 +108,10 @@ class admin extends Controller
         $data['total'] = $data['jumlah'][0];
         $data['index'] = $index;
         $data['penyewa'] = $this->model('penyewa')->get_request($data['index']);
+        $data['link'] = 1;
 
         $this->view('template/header');
-        $this->view('template/sidebar');
+        $this->view('template/sidebar', $data);
         $this->view('admin/dashboard', $data);
 
         $this->view('template/footer');
@@ -119,27 +122,27 @@ class admin extends Controller
 
         $data['penyewa'] = $this->model('penyewa')->get_user_search($index, $_POST);
         $data['jumlah'] = $this->model('user_model')->get_user($cek = false);
-
+        $data['link'] = 1;
         $data['total'] = $data['jumlah'][2];
         $data['index'] = $index;
         $this->view('template/header');
-        $this->view('template/sidebar');
+        $this->view('template/sidebar', $data);
         $this->view('admin/dashboard', $data);
 
         $this->view('template/footer');
     }
 
-    function searcharch($index = 1)
+    function searcharch($index = 1, $id = 0)
     {
-
+        $data['check'] = $id;
         $data['penyewa'] = $this->model('penyewa')->get_user_searcharch($index, $_POST);
-
+        $data['link'] = 3;
         $data['jumlah'] = $this->model('user_model')->get_user_arsip();
 
         $data['total'] = $data['jumlah'];
         $data['index'] = $index;
         $this->view('template/header');
-        $this->view('template/sidebar');
+        $this->view('template/sidebar', $data);
         $this->view('admin/arsip', $data);
 
         $this->view('template/footer');
@@ -149,8 +152,9 @@ class admin extends Controller
     function jadwal()
     {
         $data['ruang'] = $this->model('ruang_model')->get_ruang();
+        $data['link'] = 2;
         $this->view('template/header');
-        $this->view('template/sidebar');
+        $this->view('template/sidebar', $data);
         $this->view('admin/jadwal', $data);
         $this->view('template/footer');
     }
@@ -160,16 +164,21 @@ class admin extends Controller
         $data['ruang'] = $this->model('ruang_model')->get_ruang();
         $data['check'] = $this->model('penyewa')->cek_ruang($_POST);
         $data['post'] = $_POST;
+        $data['link'] = 2;
         $this->view('template/header');
-        $this->view('template/sidebar');
+        $this->view('template/sidebar', $$data);
         $this->view('admin/jadwal', $data);
         $this->view('template/footer');
 
     }
 
-    function coba()
+    function delete($id = 0)
     {
-        $data['peminjaman'] = $this->model('coba')->get_peminjaman();
-        echo var_dump($data['peminjaman']);
+        if ($id != 0) {
+            $data['check'] = $this->model('penyewa')->delete_peminjaman($id);
+            if ($data['check'] > 0) {
+                $this->arsip(1, $id);
+            }
+        }
     }
 }

@@ -117,7 +117,7 @@
                 ?>
 
 
-                <div class="kosong"></div>
+                <h1 class="kosong"></h1>
 
 
 
@@ -176,7 +176,7 @@
         if (hitung == pname.length) {
 
             kosong.style.display = 'block';
-            kosong.innerHTML = "coba";
+            kosong.innerHTML = "Tidak Ditemukan";
         }
 
 
