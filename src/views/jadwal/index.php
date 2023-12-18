@@ -26,9 +26,9 @@
         </div>
 
         <div class="form-group">
-            <label for="exampleFormControlSelect1">Lantai</label>
+            <label for="exampleFormControlSelect1">Ruang</label>
             <select name="ruang" class="form-control ctrl" id="exampleFormControlSelect1">
-                <option  <?= (isset($data['post']))?"":"selected" ?>>Pilih kelas</option>
+                <option  <?= (isset($data['post']))?"":"selected" ?>>Pilih Ruang</option>
                     <?php 
                         foreach ($data['ruang'] as $key ) {
                             ?>

@@ -106,7 +106,7 @@ if (!isset($_SESSION['username'])) {
                         <a href="<?= BASEURL ?>/admin/request" class="text-decoration-none text-black">
                             <div class="card-total d-flex  justify-content-start gap-3 align-items-center">
                                 <div class="box-yellow" id="yellow"></div>
-                                <div class="d-flex flex-column justify-content-between ">
+                                <div class="d-flex flex-column justify-content-between pt-3">
                                     <div
                                         class="atas fs-5  d-flex align-items-center justify-content-start text-start gap-2">
                                         <h1 class="fw-semibold">
@@ -118,11 +118,8 @@ if (!isset($_SESSION['username'])) {
                                     <div class="bawah fs-5">
                                         <p>Waiting to response</p>
                                     </div>
-
-
                                 </div>
                                 <i class="text-warning fs-1 bi bi-clock-history"></i>
-
                             </div>
 
 
@@ -132,18 +129,15 @@ if (!isset($_SESSION['username'])) {
                                 <div class="box-green" id="yellow"></div>
                                 <div class="d-flex flex-column justify-content-start align-items-start ">
                                     <div
-                                        class="atas fs-5 d-flex align-items-center justify-content-start text-start gap-2">
+                                        class="atas fs-5 d-flex align-items-center justify-content-start text-start gap-2 pt-3">
                                         <h1 class="fw-semibold">
                                             <?= $jumlah_satu = $data['jumlah'][1] ?>
                                         </h1>
                                         <h2 class="fw-semibold">Accepted</h2>
-
                                     </div>
                                     <div class="bawah fs-5">
                                         <p>see to more details</p>
                                     </div>
-
-
                                 </div>
                                 <i class="text-success fs-1 bi bi-check-all"></i>
                             </div>
@@ -275,7 +269,7 @@ if (!isset($_SESSION['username'])) {
                         <div class="modal-dialog modal-dialog-centered modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Detail Peminjaman</h5>
+                                    <h5 class="modal-title fw-semibold" style="font-size: 34px;" id="exampleModalLabel">Detail Peminjaman</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>

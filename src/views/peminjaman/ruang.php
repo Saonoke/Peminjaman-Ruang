@@ -90,9 +90,10 @@
                   <i class="fs-5 bi bi-people-fill"></i>
                   <?= $key['kapasitas'] ?> person
                 </p>
-                <h5 class="fw-semibold">tarif ruang :</h5>
+                <h5 class="fw-semibold">Tarif Ruang :</h5>
                 <p>
-                  <i class="fs-5 bi bi-currency-dollar"></i>
+                    <img src="<?= BASEURL ?>/image/Rp.PNG" style="width: 24px;" alt="Rp">
+<!--                  <i class="fs-5 bi bi-currency-dollar"></i>-->
                   <?= $key['tarif_ruang'] ?>
                 </p>
                 <h5 class="fw-semibold">Fasilitas : </h5>
@@ -117,12 +118,12 @@
 
                 <div class="d-flex width-100 gap-3">
                   <div class="group flex-fill">
-                    <label for="waktu-mulai " class="mb-2 fw-semibold ">waktu mulai</label>
+                    <label for="waktu-mulai " class="mb-2 fw-semibold ">Waktu mulai</label>
                     <input required name="mulai" class="form-control ctrl mb-3" type="time">
                   </div>
                   <div class="group flex-fill">
 
-                    <label for="waktu-akhir " class="mb-2 fw-semibold ">waktu Akhir</label>
+                    <label for="waktu-akhir " class="mb-2 fw-semibold ">Waktu Akhir</label>
 
                     <input name="akhir" class="form-control ctrl mb-2" type="time">
                   </div>
@@ -132,7 +133,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" style="color: red !important;" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Pinjam!</button>
           </div>
           </form>
