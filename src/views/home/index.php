@@ -190,3 +190,18 @@
         </div>
     </div>
 </section>
+
+<section>
+    <div class="foot">
+        <div class="flex" style="flex-direction: row; align-items: center; justify-content: end; gap: 20px;">
+            <div class="text-foot" style="display: flex; flex-direction: column; align-items: end; font-size: 20px;">
+                <p class="mt-2" style="margin-bottom: 0;">Copyrigth &copy; Polinema 2023</p>
+                <p style="margin-bottom: 0;">All Right Reserved.</p>
+            </div>
+            <div class="icons" >
+                <img src="<?= BASEURL ?>/image/POLINEMA.PNG" alt="" style="margin-right: 20px;">
+                <img src="<?= BASEURL ?>/image/JTI.PNG" alt="" style="width: 45px; margin-right: 20px;">
+            </div>
+        </div>
+    </div>
+</section>
