@@ -17,7 +17,7 @@ class login_model
         $this->db->query($sql);
         $result = $this->db->resultSet();
 
-        if (isset($result)) {
+        if (!empty($result)) {
             $password = md5($data['password']);
             if ($password == $result[0]['password']) {
                 return true;

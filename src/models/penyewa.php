@@ -54,7 +54,7 @@ class penyewa
     $this->db->query($query);
     $row = $this->db->resultSet();
 
-    if (!is_null($row)) {
+    if (!empty($row)) {
       $sql = "update peminjam  set nama_peminjaman='" . $_POST['nama'] . "',no_telp='" . $_POST['nohp'] . "',email='" . $_POST['email'] . "',kategori='" . $_POST['jabatan'] . "' where no_identitas='" . $_POST['nim'] . "';";
       $this->db->query($sql);
       $this->db->execute();
@@ -83,7 +83,7 @@ class penyewa
       $this->db->execute();
 
       if ($this->db->rowCount() > 0) {
-        echo 'tes';
+          
         return true;
 
       }
@@ -101,7 +101,7 @@ class penyewa
   public function cek_ruang()
   {
 
-    $sql = "SELECT r.nama_ruangan as ruang, p.tanggal_pinjam as tanggal ,p.jam_awal as mulai ,p.jam_akhir as akhir from peminjaman p inner join ruang r on r.kode_ruang = p.kode_ruang where p.jam_awal >= '" . $_POST['time_start'] . "' and p.jam_akhir <= '" . $_POST['time_end'] . "' and p.tanggal_pinjam ='" . $_POST['tanggal'] . "' and p.kode_ruang ='" . $_POST['ruang'] . "';";
+    $sql = "SELECT r.nama_ruangan as ruang, p.tanggal_pinjam as tanggal ,p.jam_awal as mulai ,p.jam_akhir as akhir from peminjaman p inner join ruang r on r.kode_ruang = p.kode_ruang where  is_acc='1' and p.jam_awal >= '" . $_POST['time_start'] . "' and p.jam_akhir <= '" . $_POST['time_end'] . "' and p.tanggal_pinjam ='" . $_POST['tanggal'] . "' and p.kode_ruang ='" . $_POST['ruang'] . "';";
     $this->db->query($sql);
     return $this->db->resultSet();
 

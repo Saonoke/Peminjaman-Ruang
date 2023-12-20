@@ -28,7 +28,8 @@
             <input type="text" class="form-control" name="username" placeholder="Username" id="">
 
             <input type="password" name="password" class="form-control" placeholder="Password">
-            <button type="submit"
+            <button type="submit" style=" --bs-btn-bg: #353578 !important;
+  --bs-btn-hover-bg: #5555b7 !important;"
                 class="btn btn-secondary w-full d-flex align-items-center text-white justify-content-center fw-semibold">Login</button>
 
 

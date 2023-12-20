@@ -20,7 +20,7 @@
         <div class="semi-bold collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>">Home</a>
+                    <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>">Beranda</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?= BASEURL ?>/jadwal/index">Jadwal</a>

@@ -166,7 +166,7 @@ class admin extends Controller
         $data['post'] = $_POST;
         $data['link'] = 2;
         $this->view('template/header');
-        $this->view('template/sidebar', $$data);
+        $this->view('template/sidebar', $data);
         $this->view('admin/jadwal', $data);
         $this->view('template/footer');
 

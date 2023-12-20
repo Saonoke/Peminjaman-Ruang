@@ -103,7 +103,8 @@
                                 ?>
 
 
-                                <a href="" class="btn btn-danger"><i class="bi bi-printer-fill"></i> Print</a>
+                                <a href="<?= BASEURL ?>/peminjaman/print" class="btn btn-danger"><i
+                                        class="bi bi-printer-fill"></i> Print</a>
                                 <?php
                             }
                             ?>
@@ -136,7 +137,7 @@
                 if ($mulai <= $total_pages) {
                     $class = ($mulai == $data['index']) ? 'pagination active' : 'pagination';
                     ?>
-                    <a class="<?= $class ?>" href="<?= BASEURL ?>/admin/dashboard/<?= $mulai ?>">
+                    <a class="<?= $class ?>" href="<?= BASEURL ?>/peminjaman/status/<?= $mulai ?>">
                         <?= $mulai ?>
                     </a>
                     <?php
