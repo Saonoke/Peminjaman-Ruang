@@ -156,7 +156,7 @@
             <textarea class="deskripsi" id="opacity" rows="4" name="deskripsi"
                 placeholder="Masukkan Alasan dalam peminjaman ruang" required></textarea><br>
 
-            <h3>Upload your File :</h3>
+            <h3>Bukti Identitas</h3>
             <span class="header">Pilih File Anda</span>
             <input type="file" name="fileToUpload" id="fileToUpload" onchange="validateFile()" />
             <span class="support">Supports: JPEG, JPG, PNG</span>

@@ -31,6 +31,8 @@
 </script>
 
 <body>
+
+
   <div class="container height">
     <header>
       <div class="d-flex p-3 align-items-center">
@@ -76,18 +78,25 @@
               <td>Peminjaman Ruang JTI</td>
             </tr>
           </table>
-          <p>(Tgl Pembuatan Surat)</p>
+          <p>
+            <?= date("Y-m-d") ?>
+          </p>
         </div>
         <p class="mt-5">
           Dengan ini, kami ingin memberikan bukti bahwa Jurusan Teknologi
-          Informasi telah resmi meminjam Ruang [Nama Ruang] untuk keperluan
-          acara [nama acara].
+          Informasi telah resmi meminjam Ruang
+          <?= $data['keperluan']['ruangan'] ?> untuk keperluan
+          acara
+          <?= $data['keperluan']['deskripsi'] ?>.
         </p>
         <p class="m-0">Kegiatan tersebut akan diselenggarakan pada :</p>
         <table class="ms-5 m-0">
           <tr>
             <td>hari,tanggal</td>
             <td>:</td>
+            <td>
+              <?= $data['keperluan']['tanggal'] ?>
+            </td>
           </tr>
           <tr>
             <td>pukul</td>
@@ -115,7 +124,9 @@
           <div class="penangggung-jawab">
             <p class="m-0">Hormat kami,</p>
             <p class="m-0">Penanggungjawab Peminjaman</p>
-            <p class="mt-5 m-0">(Nama Peminjam)</p>
+            <p class="mt-5 m-0">
+              <?= $data['keperluan']['nama'] ?>
+            </p>
             <p>NIM/NIK.()</p>
           </div>
         </div>

@@ -269,7 +269,8 @@ if (!isset($_SESSION['username'])) {
                         <div class="modal-dialog modal-dialog-centered modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title fw-semibold" style="font-size: 34px;" id="exampleModalLabel">Detail Peminjaman</h5>
+                                    <h5 class="modal-title fw-semibold" style="font-size: 34px;" id="exampleModalLabel">
+                                        Detail Peminjaman</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -318,6 +319,11 @@ if (!isset($_SESSION['username'])) {
                                             <h5>
                                                 <?= $key['jam_mulai'] ?> -
                                                 <?= $key['jam_akhir'] ?>
+                                            </h5>
+
+                                            <h5 class="fw-semibold">Nominal :</h5>
+                                            <h5>
+                                                <?= $key['nominal'] ?>
                                             </h5>
 
 

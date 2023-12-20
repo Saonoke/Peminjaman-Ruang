@@ -91,23 +91,33 @@
                         }
                         ?>
                         <td>
-                            <?php
-                            if ($key['decline'] == '1' || $key['status'] == '0') {
+                            <form action="<?= BASEURL ?>/peminjaman/print" method="post">
+
+                                <input type="hidden" name="nama" value="<?= $key['nama'] ?>">
+                                <input type="hidden" name="deskripsi" value="<?= $key['deskripsi'] ?>">
+                                <input type="hidden" name="ruangan" value="<?= $key['ruangan'] ?>">
+                                <input type="hidden" name="tanggal" value="<?= $key['tanggal'] ?>">
+
+                                <?php
+                                if ($key['decline'] == '1' || $key['status'] == '0') {
+
+                                    ?>
+                                    <button type="submit" class="btn btn-danger"
+                                        style="pointer-events: none; background-color:#D5695B;"><i class=" bi
+                                    bi-printer-fill"></i> Print</button>
+                                    <?php
+                                } else {
+                                    ?>
+
+
+                                    <button type="submit" class="btn btn-danger"><i class="bi bi-printer-fill"></i> Print</a>
+                                        <?php
+                                }
+
+
 
                                 ?>
-                                <a href="" class="btn btn-danger" style="pointer-events: none; background-color:#D5695B;"><i
-                                        class=" bi
-                                    bi-printer-fill"></i> Print</a>
-                                <?php
-                            } else {
-                                ?>
-
-
-                                <a href="<?= BASEURL ?>/peminjaman/print" class="btn btn-danger"><i
-                                        class="bi bi-printer-fill"></i> Print</a>
-                                <?php
-                            }
-                            ?>
+                            </form>
                         </td>
 
                     </tr>

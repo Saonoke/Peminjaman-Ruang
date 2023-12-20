@@ -39,7 +39,9 @@ class peminjaman extends Controller
 
   public function print()
   {
-    $this->view('peminjaman/form_izin');
+    $data['keperluan'] = $_POST;
+
+    $this->view('peminjaman/form_izin', $data);
   }
   public function ruang($coba = '0')
   {
