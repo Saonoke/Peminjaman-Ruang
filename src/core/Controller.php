@@ -2,11 +2,6 @@
 
 abstract class AbstractController
 {
-    public function view($view, $data = [])
-    {
-        require '../src/views/' . $view . '.php';
-    }
-
     abstract public function model($model);
 }
 
@@ -18,5 +13,10 @@ class Controller extends AbstractController
 
         return new $model;
     }
+    public function view($view, $data = [])
+    {
+        require '../src/views/' . $view . '.php';
+    }
+
 }
 

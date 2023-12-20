@@ -90,7 +90,7 @@
 
 
         <a href="<?= BASEURL ?>/peminjaman/ruang" class="text-decoration-none">
-            <div class="kartu">
+            <div class="kartu ">
                 <div class="px-4 background d-flex flex-column justify-content-end">
                     <div class="gradient">
                     </div>
@@ -189,4 +189,14 @@
             <a href="<?= BASEURL ?>/peminjaman" class="btn btn-secondary">Pinjam Sekarang!</a>
         </div>
     </div>
+</section>
+
+<section id="footer" class="pb-1">
+    <div class="d-flex justify-content-end p-3  ">
+        <div class="text-end  fs-5">
+            <p class="m-0">Copyright 2023 &copy; Polinema 2023</p>
+            <p class="m-0">. All Rights Reserved.</p>
+        </div>
+    </div>
+
 </section>
