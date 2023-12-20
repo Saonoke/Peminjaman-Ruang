@@ -122,7 +122,8 @@
 
 
     </div>
-    <a href="#" class="mt-5 btn py-2 btn-primary btn-bd-primary">Pinjam Sekarang !</a>
+    <a href="<?= BASEURL ?>/peminjaman/ruang" class="mt-5 btn py-2 btn-primary btn-bd-primary">Lihat Semua <i
+            class="bi bi-caret-right-fill"></i></a>
 </div>
 
 <section id="spec" class="d-flex width-100  flex-wrap">
@@ -173,9 +174,10 @@
 <section id="about" class="my-5">
     <div class="container">
         <h1 class="fw-semibold size70">SISPEMRU</h1>
-        <P>Sistem Peminjaman Ruang Jurusan Teknologi Informasi Dibuat Untuk Memfasilitasi Seluruh Pihak
-            Yang Ingin Meminjam Ruangan Di JTI Agar Lebih Mudah Dan Cepat Dengan Sistem
-            Real-Time Sesuai Jadwal Yang Tersedia.</P>
+        <P>SISPEMRU adalah sistem peminjaman ruang yang dirancang untuk memudahkan mahasiswa dan staf di Jurusan
+            Teknologi Informasi (JTI) Politeknik Negeri Malang, serta pihak luar yang ingin meminjam ruang di gedung
+            JTI. SISPEMRU bertujuan untuk memberikan solusi praktis dan responsif terhadap kebutuhan peminjaman ruang di
+            lingkungan JTI Polinema.</P>
     </div>
 </section>
 

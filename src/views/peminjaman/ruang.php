@@ -32,7 +32,7 @@
 
   <div class="container m-0">
     <h1 class="jumlah fw-semibold  ">
-      <?= count($data['ruang']) ?> result
+      <?= count($data['ruang']) ?> Hasil
     </h1>
   </div>
 
@@ -47,9 +47,9 @@
   <div class="block"></div>
 </div> -->
 
-    <button href="#coba" class="rouded-3 btn-sendiri coba " data-bs-toggle="modal"
+    <button href="#coba" class="rounded-3 btn-sendiri coba " data-bs-toggle="modal"
       data-bs-target="<?= '#exampleModal' . $key['kode_ruang'] ?>">
-      <div class="kartu kartu-ruangan rounded-3">
+      <div class="kartu rounded-3 kartu-ruangan rounded-3">
         <div class="px-4 rounded-3 relative  d-flex flex-column justify-content-end">
           <div class="gradient rounded-3">
           </div>
