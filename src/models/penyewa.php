@@ -83,7 +83,7 @@ class penyewa
       $this->db->execute();
 
       if ($this->db->rowCount() > 0) {
-        echo 'tes';
+          
         return true;
 
       }

@@ -19,7 +19,7 @@
         <div class="semi-bold collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link color-white  active" aria-current="page" href="<?= BASEURL ?>">Home</a>
+                    <a class="nav-link color-white  active" aria-current="page" href="<?= BASEURL ?>">Beranda</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link color-white " href="<?= BASEURL ?>/jadwal/index">Jadwal</a>
@@ -53,9 +53,9 @@
         </div>
         <div class="d-flex z-3 box flex-column text-center justify-content-center align-items-center">
             <h1 class="semi-bold ">Peminjaman Ruang JTI</h1>
-            <h3 class="mt-3">Peminjaman Ruang oleh Mahasiswa, Dosen,Pihak luar yang ingin meminjam gedung di Polinema
+            <h3 class="mx-3">Peminjaman Ruang oleh Mahasiswa, Dosen, Pihak luar yang ingin meminjam gedung di Polinema
             </h3>
-            <a href="<?= BASEURL ?>/peminjaman/ruang" class="mt-2 mb-5 btn py-2 btn-primary btn-bd-primary">Pinjam
+            <a href="<?= BASEURL ?>/peminjaman/ruang" class="mt-3 mb-5 btn py-2 btn-primary btn-bd-primary">Pinjam
                 Sekarang !</a>
         </div>
 
@@ -78,7 +78,7 @@
 
         <a href="<?= BASEURL ?>/peminjaman/ruang" class="text-decoration-none">
             <div class="kartu">
-                <div class="px-4 background d-flex flex-column justify-content-end">
+                <div class="px-4 background background-lt5 d-flex flex-column justify-content-end">
                     <div class="gradient">
                     </div>
                     <h1 class="fw-semibold">Lantai 5</h1>
@@ -91,7 +91,7 @@
 
         <a href="<?= BASEURL ?>/peminjaman/ruang" class="text-decoration-none">
             <div class="kartu ">
-                <div class="px-4 background d-flex flex-column justify-content-end">
+                <div class="px-4 background background-lt6 d-flex flex-column justify-content-end">
                     <div class="gradient">
                     </div>
                     <h1 class="fw-semibold">Lantai 6 </h1>
@@ -103,7 +103,7 @@
 
         <a href="<?= BASEURL ?>/peminjaman/ruang" class="text-decoration-none">
             <div class="kartu">
-                <div class="px-4 background d-flex flex-column justify-content-end">
+                <div class="px-4 background background-lt7 d-flex flex-column justify-content-end">
                     <div class="gradient">
                     </div>
                     <h1 class="fw-semibold">Lantai 7 </h1>
@@ -129,7 +129,7 @@
     <div class="bg-sec width-70">
         <div class="d-flex justify-content-center ">
             <div class="container px-5 p-5">
-                <div class="d-flex justify-content-around gap-3 align-items-center ">
+                <div class="d-flex flex-wrap justify-content-around gap-3 align-items-center ">
                     <div class="left">
                         <div class="mb-5">
                             <img class="icon" src="<?= BASEURL ?>/image/time.png" alt="">
@@ -182,9 +182,14 @@
 <section id="cta" class="bg-blue p-5">
     <div class="container">
         <div class="flex justify-content-center">
-            <h1 class="text-center text-white fw-semibold" style="width: 30rem;">
-                Peminjaman Ruang Dan Gedung
+            <h1 class="text-center text-white fw-semibold" style="">
+                Peminjaman Ruang dan Gedung
             </h1>
+            <!-- <h1 class="text-center text-white fw-semibold" style="width: 30rem;">
+
+            </h1> -->
+
+
             <p class="text-center text-white fs-2 fw-normal ">Semakin Mudah</p>
             <a href="<?= BASEURL ?>/peminjaman" class="btn btn-secondary">Pinjam Sekarang!</a>
         </div>

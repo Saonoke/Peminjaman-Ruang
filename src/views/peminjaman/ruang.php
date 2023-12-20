@@ -61,7 +61,7 @@
             <?= $key['lantai'] ?>
           </p>
           <p class='coba second-color fs-4'><i class="fs-4 bi bi-people-fill"></i>
-            <?= $key['kapasitas'] ?> Person
+            <?= $key['kapasitas'] ?> Orang
           </p>
 
         </div>
@@ -88,12 +88,12 @@
                 <h5 class="fw-semibold">Kapasitas : </h5>
                 <p>
                   <i class="fs-5 bi bi-people-fill"></i>
-                  <?= $key['kapasitas'] ?> person
+                  <?= $key['kapasitas'] ?> Orang
                 </p>
                 <h5 class="fw-semibold">Tarif Ruang :</h5>
                 <p>
-                    <img src="<?= BASEURL ?>/image/Rp.PNG" style="width: 24px;" alt="Rp">
-<!--                  <i class="fs-5 bi bi-currency-dollar"></i>-->
+                  <img src="<?= BASEURL ?>/image/Rp.PNG" style="width: 24px;" alt="Rp">
+                  <!--                  <i class="fs-5 bi bi-currency-dollar"></i>-->
                   <?= $key['tarif_ruang'] ?>
                 </p>
                 <h5 class="fw-semibold">Fasilitas : </h5>
@@ -133,7 +133,8 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" style="color: red !important;" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" style="color: red !important;"
+              data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Pinjam!</button>
           </div>
           </form>
